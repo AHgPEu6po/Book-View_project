@@ -6,7 +6,7 @@
   font-family: "Outfit", sans-serif;
 }
 
-:root {
+@theme {
   --color-primary: #800020;
   --color-primary-dull: #B03040;
   --color-light: #FFFFFF;
@@ -23,3 +23,11 @@
   --color-cta: #FFD700;
   --color-text: #FFFFFF;
 }
+
+.border-gradient-premiere {
+  border: 4px solid transparent;
+  background-image: linear-gradient(white, white), linear-gradient(90deg, #E53E3E, #F6E05E);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
