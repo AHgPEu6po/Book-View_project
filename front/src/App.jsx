@@ -5,6 +5,8 @@ import Home from './pages/Home'
 import EventDetails from './pages/EventDetails'
 import Events from './pages/Events'
 import MyBookings from './pages/MyBookings'
+import About from './pages/About'
+import Footer from './components/Footer'
 
 const App = () => {
 
@@ -19,8 +21,11 @@ const App = () => {
         <Route path='/' element={<Home/>}/>
         <Route path='/event-details/:id' element={<EventDetails/>}/>
         <Route path='/events' element={<Events/>}/>
+        <Route path='/about' element={<About/>}/>
         <Route path='/my-bookings' element={<MyBookings/>}/>
       </Routes>
+
+      <Footer/>
     </>
   )
 }

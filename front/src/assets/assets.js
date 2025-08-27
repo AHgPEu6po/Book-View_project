@@ -3,6 +3,9 @@ import search from './search.svg'
 import close from './close.svg'
 import menu from './menu.svg'
 import hero from './hero.jpg'
+import cinema from './cinema.png'
+import cinema_man from './cinema_man.png'
+import cinema_inside from './cinema_inside.png'
 import arrow from './arrow.svg'
 import facebook from './facebook.svg'
 import instagram from './instagram.svg'
@@ -32,6 +35,9 @@ export const assets = {
     close,
     menu,
     hero,
+    cinema,
+    cinema_man,
+    cinema_inside,
     arrow,
     facebook,
     instagram,

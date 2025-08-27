@@ -12,7 +12,6 @@ const Home = () => {
       <RecommendationSection/>
       <PremiereSection/>
       <NewsletterBox/>
-      <Footer/>
     </div>
   )
 }
