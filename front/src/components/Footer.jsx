@@ -33,7 +33,7 @@ const Footer = () => {
                     <div>
                         <h3 className='font-semibold text-base text-gray-900 md:mb-5 mb-2'>Ресурси</h3>
                         <ul className='text-sm space-y-1'>
-                            <li><a href="#" className="hover:underline transition">Центр допомоги</a></li>
+                            <li><a href="#" className="hover:underline transition">Технічна підтримка</a></li>
                             <li><a href="#" className="hover:underline transition">Умови користування</a></li>
                             <li><a href="#" className="hover:underline transition">Методи оплати</a></li>
                             <li><a href="#" className="hover:underline transition">Політика конфіденційності</a></li>

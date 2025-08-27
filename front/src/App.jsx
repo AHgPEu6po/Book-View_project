@@ -7,6 +7,7 @@ import Events from './pages/Events'
 import MyBookings from './pages/MyBookings'
 import About from './pages/About'
 import Footer from './components/Footer'
+import Contact from './pages/Contact'
 
 const App = () => {
 
@@ -22,6 +23,7 @@ const App = () => {
         <Route path='/event-details/:id' element={<EventDetails/>}/>
         <Route path='/events' element={<Events/>}/>
         <Route path='/about' element={<About/>}/>
+        <Route path='/contact' element={<Contact/>}/>
         <Route path='/my-bookings' element={<MyBookings/>}/>
       </Routes>
 
