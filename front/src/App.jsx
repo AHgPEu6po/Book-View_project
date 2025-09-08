@@ -8,6 +8,7 @@ import MyBookings from './pages/MyBookings'
 import About from './pages/About'
 import Footer from './components/Footer'
 import Contact from './pages/Contact'
+import Cinemas from './pages/Cinemas'
 
 const App = () => {
 
@@ -20,6 +21,7 @@ const App = () => {
 
       <Routes>
         <Route path='/' element={<Home/>}/>
+        <Route path='/cinemas' element={<Cinemas/>}/>
         <Route path='/event-details/:id' element={<EventDetails/>}/>
         <Route path='/events' element={<Events/>}/>
         <Route path='/about' element={<About/>}/>
