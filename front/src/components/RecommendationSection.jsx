@@ -34,7 +34,7 @@ const RecommendationSection = () => {
         }}
         className='flex items-center justify-center gap-2 px-6 py-2 border bg-primary 
         text-light border-borderColor hover:bg-primary-dull rounded-md mt-12 cursor-pointer'>
-            Переглянути усі афіші <img className='w-7 invert' src={assets.arrow} alt="" />
+            Переглянути всі афіші <img className='w-7 invert' src={assets.arrow} alt="" />
         </button>
       
     </div>

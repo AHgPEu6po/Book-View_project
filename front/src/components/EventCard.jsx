@@ -22,7 +22,7 @@ const EventCard = ({ event }) => {
   const closeTrailer = () => setIsTrailerOpen(false);
 
   return (
-    <div onClick = {() => {navigate(`/event-details/${event._id}`); scrollTo(0,0)}} 
+    <div onClick = {() => {navigate(`/posters/${event._id}`); scrollTo(0,0)}} 
     className={`relative flex flex-col h-full rounded-xl overflow-hidden shadow-lg 
     transition-all duration-500 cursor-pointer bg-white group ${event.isPremiere ? 
       'border-gradient-premiere animate-premiere-glow' : ''}`}>

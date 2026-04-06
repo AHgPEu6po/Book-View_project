@@ -242,6 +242,14 @@ export const cinemas = [
     }
 ];
 
+export const allCinemaNames = cinemas.map(c => c.name);
+
+export const allGenres = Array.from(
+  new Set(films.flatMap(f => f.category))
+).sort((a, b) => a.localeCompare(b, 'uk'));
+
+export const allAgeRatings = ["0+", "3A+", "12+", "16+", "18+"];
+
 export const cities = ["Київ", "Львів", "Одеса"]
 
 export const districts = {

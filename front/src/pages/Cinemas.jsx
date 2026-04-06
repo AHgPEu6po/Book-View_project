@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Select from "react-select";
 import { assets, cinemas, cities, districts } from "../assets/assets";
 
 const Cinemas = () => {
+  const navigate = useNavigate()
+  
   const [search, setSearch] = useState("");
   const [selectedCity, setSelectedCity] = useState(null);
   const [selectedDistricts, setSelectedDistricts] = useState([]);
@@ -113,6 +116,7 @@ const Cinemas = () => {
         {filteredCinemas.map(cinema => (
           <div
             key={cinema._id}
+            onClick={() => navigate(`/cinemas/${cinema._id}`)}
             className="flex items-center gap-4 border border-borderColor p-4 rounded-lg hover:shadow-md transition"
           >
             <img
