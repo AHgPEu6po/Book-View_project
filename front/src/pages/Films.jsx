@@ -27,7 +27,7 @@ const Films = () => {
     
       const matchesGenres =
       genres.length > 0
-        ? genres.some((g) => film.category?.includes(g.value))
+        ? genres.every((g) => film.category?.includes(g.value))
         : true;
 
     const matchesPremiere = onlyPremiere

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Select from "react-select";
-import { assets, cinemas, allGenres, allAgeRatings } from "../assets/assets";
+import SessionCard from "../components/SessionCard";
+import { assets, cinemas, allGenres, allAgeRatings, sessionLists, sessions, films } from "../assets/assets";
 
 const CinemaDetails = () => {
   const { id } = useParams();
@@ -14,9 +15,68 @@ const CinemaDetails = () => {
   const [age, setAge] = useState(null);
   const [formats, setFormats] = useState([]);
 
+  const navigate = useNavigate();
+
   if (!cinema) {
     return <div className="p-6">Кінотеатр не знайдено</div>;
   }
+
+  const handleCinemaChange = (selected) => {
+    if (selected) {
+      navigate(`/cinemas/${selected.value}`);
+    }
+  };
+
+  const formatDate = (dateStr) => {
+    const date = new Date(dateStr);
+
+    const days = ["Нд", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"];
+    const months = [
+      "січня","лютого","березня","квітня","травня","червня",
+      "липня","серпня","вересня","жовтня","листопада","грудня"
+    ];
+
+    return `${date.getDate()} ${months[date.getMonth()]}, ${days[date.getDay()]}`;
+  };
+
+  const cinemaLists = sessionLists.filter(
+    (l) => l.cinema_id === cinema._id
+  );
+
+  const filmsWithSessions = cinemaLists.map((list) => {
+    const film = films.find((f) => f._id === list.film_id);
+
+    let filmSessions = sessions
+      .filter((s) => s.list_id === list._id)
+      .sort((a, b) => a.time.localeCompare(b.time));
+
+    if (date) {
+      filmSessions = filmSessions.filter((s) => s.date === date);
+    }
+
+    return {
+      ...film,
+      sessions: filmSessions,
+    };
+  });
+
+    const filteredFilmsWithSessions = filmsWithSessions.filter((film) => {
+    const matchesSearch = film.name
+      .toLowerCase()
+      .includes(search.toLowerCase());
+
+    const matchesGenres =
+      genres.length > 0
+        ? genres.every((g) => film.category?.includes(g.value))
+        : true;
+
+    const getAgeNumber = (rating) => parseInt(rating) || 0;
+    const matchesAge = age
+      ? getAgeNumber(film.ageRating) <= getAgeNumber(age.value)
+      : true;
+
+    return matchesSearch && matchesGenres && matchesAge;
+  });
 
   const customSelectStyles = {
     control: (provided) => ({
@@ -73,14 +133,28 @@ const CinemaDetails = () => {
             <p className="text-gray-500 mt-2">{cinema.address}</p>
           </div>
 
-          <a
-            href={cinema.cinemaURL}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-4 text-gray-500 hover:underline cursor-pointer transition"
-          >
-            Сайт кінотеатру
-          </a>
+          <div>
+            <a
+              href={cinema.cinemaURL}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 text-gray-500 hover:underline cursor-pointer transition"
+            >
+              Сайт кінотеатру
+            </a>
+
+            <Select
+              className="mt-3"
+              options={cinemas.map(c => ({
+                value: c._id,
+                label: c.name
+              }))}
+              value={{ value: cinema._id, label: cinema.name }}
+              onChange={handleCinemaChange}
+              styles={customSelectStyles}
+              isSearchable
+            />
+          </div>
         </div>
       </div>
 
@@ -142,8 +216,18 @@ const CinemaDetails = () => {
           />
         </div>
 
-        <div className="lg:w-3/4 w-full flex items-center justify-center min-h-[300px]">
-          <p className="text-gray-400">Сеанси поки що відсутні</p>
+        <div className="lg:w-3/4 w-full space-y-6">
+          {filteredFilmsWithSessions.length === 0 && (
+            <p className="text-gray-400 text-center">Сеанси поки що відсутні</p>
+          )}
+
+          {filteredFilmsWithSessions.map((film) => (
+            <SessionCard
+              key={film._id}
+              film={film}
+              formatDate={formatDate}
+            />
+          ))}
         </div>
 
       </div>
