@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import Select from "react-select";
-import { films, allCinemaNames  } from "../assets/assets";
+import { films, allCinemaNames, cinemas, sessionLists, sessions  } from "../assets/assets";
 import { Play, X } from "lucide-react";
+import SessionCard from "../components/SessionCard";
 
 const FilmDetails = () => {
   const { id } = useParams();
@@ -13,6 +14,54 @@ const FilmDetails = () => {
   const [formats, setFormats] = useState([]);
 
   if (!film) return <div className="p-6">Фільм не знайдено</div>;
+
+  const filmLists = sessionLists.filter(
+    (l) => l.film_id === film._id
+  );
+
+  const cinemasWithSessions = filmLists.map((list) => {
+    const cinema = cinemas.find((c) => c._id === list.cinema_id);
+
+    let cinemaSessions = sessions
+      .filter((s) => s.list_id === list._id)
+      .sort((a, b) => a.time.localeCompare(b.time));
+
+    if (date) {
+      cinemaSessions = cinemaSessions.filter((s) => s.date === date);
+    }
+
+    if (formats.length > 0) {
+      cinemaSessions = cinemaSessions.filter((s) =>
+        formats.some((f) => f.value === s.format)
+      );
+    }
+
+    return {
+      ...cinema,
+      sessions: cinemaSessions,
+    };
+  });
+
+  const filteredCinemasWithSessions = cinemasWithSessions.filter((cinema) => {
+    const matchesCinema =
+      selectedCinemas.length > 0
+        ? selectedCinemas.some((c) => c.value === cinema.name)
+        : true;
+
+    return matchesCinema;
+  });
+
+  const formatDate = (dateStr) => {
+    const date = new Date(dateStr);
+
+    const days = ["Нд", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"];
+    const months = [
+      "січня","лютого","березня","квітня","травня","червня",
+      "липня","серпня","вересня","жовтня","листопада","грудня"
+    ];
+
+    return `${date.getDate()} ${months[date.getMonth()]}, ${days[date.getDay()]}`;
+  };
 
   const getEmbedURL = (url) => url.replace("watch?v=", "embed/");
 
@@ -128,8 +177,22 @@ const FilmDetails = () => {
           />
         </div>
 
-        <div className="lg:w-3/4 w-full flex items-center justify-center min-h-[300px]">
-          <p className="text-gray-400">Сеанси поки що відсутні</p>
+        <div className="lg:w-3/4 w-full space-y-6">
+          {filteredCinemasWithSessions.length === 0 && (
+            <p className="text-gray-400 text-center">
+              Сеанси поки що відсутні
+            </p>
+          )}
+
+          {filteredCinemasWithSessions.map((cinema) => (
+            <SessionCard
+              key={cinema._id}
+              film={film}
+              cinema={cinema}
+              formatDate={formatDate}
+              isFilmPage
+            />
+          ))}
         </div>
       </div>
     </div>

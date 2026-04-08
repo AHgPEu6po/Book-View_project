@@ -279,47 +279,47 @@ export const sessionLists = [
 ];
 
 export const sessions = [
-  { _id: "s000001", list_id: "ls000001", date: "2026-04-07", time: "10:00" },
-  { _id: "s000002", list_id: "ls000001", date: "2026-04-07", time: "13:00" },
-  { _id: "s000003", list_id: "ls000001", date: "2026-04-07", time: "16:00" },
-  { _id: "s000004", list_id: "ls000001", date: "2026-04-08", time: "11:00" },
-  { _id: "s000005", list_id: "ls000001", date: "2026-04-08", time: "14:00" },
-  { _id: "s000006", list_id: "ls000001", date: "2026-04-08", time: "18:00" },
+  { _id: "s000001", list_id: "ls000001", date: "2026-04-07", time: "10:00", format: "2D" },
+  { _id: "s000002", list_id: "ls000001", date: "2026-04-07", time: "13:00", format: "3D" },
+  { _id: "s000003", list_id: "ls000001", date: "2026-04-07", time: "16:00", format: "RealD" },
+  { _id: "s000004", list_id: "ls000001", date: "2026-04-08", time: "11:00", format: "2D" },
+  { _id: "s000005", list_id: "ls000001", date: "2026-04-08", time: "14:00", format: "3D" },
+  { _id: "s000006", list_id: "ls000001", date: "2026-04-08", time: "18:00", format: "2D" },
 
-  { _id: "s000007", list_id: "ls000002", date: "2026-04-07", time: "09:30" },
-  { _id: "s000008", list_id: "ls000002", date: "2026-04-07", time: "12:30" },
-  { _id: "s000009", list_id: "ls000002", date: "2026-04-07", time: "15:30" },
-  { _id: "s000010", list_id: "ls000002", date: "2026-04-08", time: "10:30" },
-  { _id: "s000011", list_id: "ls000002", date: "2026-04-08", time: "13:30" },
+  { _id: "s000007", list_id: "ls000002", date: "2026-04-07", time: "09:30", format: "2D" },
+  { _id: "s000008", list_id: "ls000002", date: "2026-04-07", time: "12:30", format: "RealD" },
+  { _id: "s000009", list_id: "ls000002", date: "2026-04-07", time: "15:30", format: "3D" },
+  { _id: "s000010", list_id: "ls000002", date: "2026-04-08", time: "10:30", format: "2D" },
+  { _id: "s000011", list_id: "ls000002", date: "2026-04-08", time: "13:30", format: "3D" },
 
-  { _id: "s000012", list_id: "ls000003", date: "2026-04-07", time: "17:00" },
-  { _id: "s000013", list_id: "ls000003", date: "2026-04-08", time: "19:00" },
+  { _id: "s000012", list_id: "ls000003", date: "2026-04-07", time: "17:00", format: "3D" },
+  { _id: "s000013", list_id: "ls000003", date: "2026-04-08", time: "19:00", format: "2D" },
 
-  { _id: "s000014", list_id: "ls000004", date: "2026-04-07", time: "11:00" },
-  { _id: "s000015", list_id: "ls000004", date: "2026-04-08", time: "15:00" },
-  { _id: "s000016", list_id: "ls000004", date: "2026-04-08", time: "18:30" },
+  { _id: "s000014", list_id: "ls000004", date: "2026-04-07", time: "11:00", format: "2D" },
+  { _id: "s000015", list_id: "ls000004", date: "2026-04-08", time: "15:00", format: "3D" },
+  { _id: "s000016", list_id: "ls000004", date: "2026-04-08", time: "18:30", format: "RealD" },
 
-  { _id: "s000021", list_id: "ls000008", date: "2026-04-07", time: "11:00" },
-  { _id: "s000022", list_id: "ls000008", date: "2026-04-07", time: "14:00" },
-  { _id: "s000023", list_id: "ls000008", date: "2026-04-07", time: "17:00" },
-  { _id: "s000024", list_id: "ls000008", date: "2026-04-08", time: "12:00" },
-  { _id: "s000025", list_id: "ls000008", date: "2026-04-08", time: "20:00" },
+  { _id: "s000021", list_id: "ls000008", date: "2026-04-07", time: "11:00", format: "2D" },
+  { _id: "s000022", list_id: "ls000008", date: "2026-04-07", time: "14:00", format: "3D" },
+  { _id: "s000023", list_id: "ls000008", date: "2026-04-07", time: "17:00", format: "RealD" },
+  { _id: "s000024", list_id: "ls000008", date: "2026-04-08", time: "12:00", format: "2D" },
+  { _id: "s000025", list_id: "ls000008", date: "2026-04-08", time: "20:00", format: "RealD" },
 
-  { _id: "s000026", list_id: "ls000009", date: "2026-04-07", time: "10:30" },
-  { _id: "s000027", list_id: "ls000009", date: "2026-04-07", time: "13:30" },
-  { _id: "s000028", list_id: "ls000009", date: "2026-04-08", time: "15:00" },
-  { _id: "s000029", list_id: "ls000009", date: "2026-04-08", time: "18:30" },
+  { _id: "s000026", list_id: "ls000009", date: "2026-04-07", time: "10:30", format: "2D" },
+  { _id: "s000027", list_id: "ls000009", date: "2026-04-07", time: "13:30", format: "3D" },
+  { _id: "s000028", list_id: "ls000009", date: "2026-04-08", time: "15:00", format: "RealD" },
+  { _id: "s000029", list_id: "ls000009", date: "2026-04-08", time: "18:30", format: "2D" },
 
-  { _id: "s000036", list_id: "ls000014", date: "2026-04-07", time: "16:00" },
-  { _id: "s000037", list_id: "ls000014", date: "2026-04-08", time: "19:00" },
+  { _id: "s000036", list_id: "ls000014", date: "2026-04-07", time: "16:00", format: "RealD" },
+  { _id: "s000037", list_id: "ls000014", date: "2026-04-08", time: "19:00", format: "3D" },
 
-  { _id: "s000038", list_id: "ls000015", date: "2026-04-07", time: "14:00" },
-  { _id: "s000039", list_id: "ls000015", date: "2026-04-08", time: "18:00" },
+  { _id: "s000038", list_id: "ls000015", date: "2026-04-07", time: "14:00", format: "2D" },
+  { _id: "s000039", list_id: "ls000015", date: "2026-04-08", time: "18:00", format: "RealD" },
 
-  { _id: "s000040", list_id: "ls000016", date: "2026-04-07", time: "17:30" },
+  { _id: "s000040", list_id: "ls000016", date: "2026-04-07", time: "17:30", format: "2D" },
 
-  { _id: "s000041", list_id: "ls000017", date: "2026-04-07", time: "15:00" },
-  { _id: "s000042", list_id: "ls000018", date: "2026-04-08", time: "18:00" },
+  { _id: "s000041", list_id: "ls000017", date: "2026-04-07", time: "15:00", format: "3D" },
+  { _id: "s000042", list_id: "ls000018", date: "2026-04-08", time: "18:00", format: "RealD" },
 ];
 
 export const allCinemaNames = cinemas.map(c => c.name);

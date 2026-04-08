@@ -54,6 +54,12 @@ const CinemaDetails = () => {
       filmSessions = filmSessions.filter((s) => s.date === date);
     }
 
+    if (formats.length > 0) {
+      filmSessions = filmSessions.filter((s) =>
+        formats.some((f) => f.value === s.format)
+      );
+    }
+
     return {
       ...film,
       sessions: filmSessions,
