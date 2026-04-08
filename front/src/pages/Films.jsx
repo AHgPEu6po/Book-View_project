@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Select from "react-select";
-import { films, assets, allGenres, allCinemaNames, allAgeRatings } from "../assets/assets";
+import { films, cinemas, assets, allGenres, sessionLists, allAgeRatings } from "../assets/assets";
 import EventCard from "../components/EventCard";
 
 const Films = () => {
@@ -15,9 +15,14 @@ const Films = () => {
       .toLowerCase()
       .includes(search.toLowerCase());
 
-    // заглушка
     const matchesCinema =
-      selectedCinemas.length > 0 ? true : true;
+      selectedCinemas.length > 0
+        ? sessionLists.some(
+            (list) =>
+              list.film_id === film._id &&
+              selectedCinemas.some(sel => sel.value === list.cinema_id)
+          )
+        : true;
     
     const getAgeNumber = (rating) => parseInt(rating) || 0;
 
@@ -100,7 +105,7 @@ const Films = () => {
 
         <Select
           isMulti
-          options={allCinemaNames.map(name => ({ value: name, label: name }))}
+          options={cinemas.map(c => ({ value: c._id, label: c.name }))}
           value={selectedCinemas}
           onChange={setSelectedCinemas}
           placeholder="Кінотеатр"

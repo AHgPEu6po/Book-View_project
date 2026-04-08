@@ -60,7 +60,11 @@ const SessionCard = ({ film, cinema, isFilmPage, formatDate, formats }) => {
       <img
         src={isFilmPage ? cinema.image : film.image}
         alt={isFilmPage ? cinema.name : film.name}
-        className="w-24 h-32 object-cover rounded-lg"
+        className={`object-cover rounded-lg ${
+          isFilmPage
+            ? "w-64 h-32"
+            : "w-24 h-32"
+        }`}
       />
 
       <div className="flex flex-col w-full">

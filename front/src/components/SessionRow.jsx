@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const SessionRow = ({ date, sessions, formatDate, formats = [] }) => {
+  const navigate = useNavigate();
   
   const filteredSessions =
     formats.length > 0
@@ -22,6 +24,10 @@ const SessionRow = ({ date, sessions, formatDate, formats = [] }) => {
         {filteredSessions.map((s) => (
           <button
             key={s._id}
+            onClick={(e) => {
+              e.stopPropagation();
+              navigate(`/session/${s._id}`);
+            }}
             className="w-[70px] py-1 text-sm border border-borderColor
               rounded-full transition hover:bg-[#E8A7AF] hover:border-transparent"
           >
