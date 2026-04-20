@@ -11,15 +11,17 @@ import Contact from './pages/Contact'
 import CinemaDetails from './pages/CinemaDetails'
 import Cinemas from './pages/Cinemas'
 import Session from './pages/Session'
+import Login from './components/Login'
 
 const App = () => {
 
   const [showLogin, setShowLogin] = useState(false)
-  const isOwnerPath = useLocation().pathname.startsWith('/owner')
 
   return (
     <>
-      {!isOwnerPath && <Navbar setShowLogin={setShowLogin}/>}
+      {showLogin && <Login setShowLogin={setShowLogin}/>}
+      
+      <Navbar/>
 
       <Routes>
         <Route path='/' element={<Home/>}/>
