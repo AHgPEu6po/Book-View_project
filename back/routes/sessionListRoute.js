@@ -1,6 +1,11 @@
-import expres from 'express'
-import {  } from '../controllers/sessionListController.js'
+import express from "express";
+import { createSessionList, deleteSessionList, getSessionListData } from "../controllers/sessionListController.js";
+import adminAuth from "../middleware/adminAuth.js";
 
-const sessionListRouter = expres.Router()
+const sessionListRouter = express.Router();
 
-export default sessionListRouter
+sessionListRouter.post("/create", adminAuth, createSessionList);
+sessionListRouter.post("/delete", adminAuth, deleteSessionList);
+sessionListRouter.post("/get", getSessionListData);
+
+export default sessionListRouter;
