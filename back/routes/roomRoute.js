@@ -1,6 +1,10 @@
-import expres from 'express'
-import {  } from '../controllers/roomController.js'
+import express from "express";
+import { createRoom, getRoom } from "../controllers/roomController.js";
+import adminAuth from "../middleware/adminAuth.js";
 
-const roomRouter = expres.Router()
+const roomRouter = express.Router();
 
-export default roomRouter
+roomRouter.post("/create", adminAuth, createRoom);
+roomRouter.post("/get", getRoom);
+
+export default roomRouter;

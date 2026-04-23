@@ -1,12 +1,12 @@
-import express from 'express'
-import { placeOrderStripe, userOrders, verifyStripe } from '../controllers/orderController.js'
-import adminAuth from '../middleware/adminAuth.js';
-import authUser from '../middleware/auth.js';
+import express from "express";
+import authUser from "../middleware/auth.js";
+import { placeOrderStripe, verifyStripe, getUserOrders, cancelOrder } from "../controllers/orderController.js";
 
 const orderRouter = express.Router();
 
-orderRouter.post('/stripe', authUser, placeOrderStripe);
-orderRouter.post('/userorders', authUser, userOrders);
-orderRouter.post('/verifyStripe', authUser, verifyStripe);
+orderRouter.post("/place", authUser, placeOrderStripe);
+orderRouter.post("/verify", verifyStripe);
+orderRouter.get("/user", authUser, getUserOrders);
+orderRouter.post("/cancel", authUser, cancelOrder);
 
-export default orderRouter
+export default orderRouter;
