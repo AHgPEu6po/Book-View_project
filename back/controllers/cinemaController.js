@@ -64,11 +64,9 @@ const getCinemaData = async (req, res) => {
 
 const listNamesOfCinemas = async (req, res) => {
   try {
-    const cinemas = await cinemaModel.find().select("name");
+    const cinemas = await cinemaModel.find().select("_id name");
 
-    const names = cinemas.map(c => c.name);
-
-    res.json({ success: true, names });
+    res.json({ success: true, cinemas });
 
   } catch (error) {
     logger.error(error.message);

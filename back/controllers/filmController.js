@@ -4,7 +4,7 @@ import { v2 as cloudinary } from "cloudinary"
 
 const createFilm = async (req, res) => {
   try {
-    const { name, ageRating, category, trailerURL } = req.body;
+    const { name, ageRating, category, trailerURL, isPremiere } = req.body;
 
     const imageFile = req.file;
 
@@ -20,7 +20,7 @@ const createFilm = async (req, res) => {
       { resource_type: "image" }
     );
 
-    const film = new filmModel({ name, image: result.secure_url, ageRating, category, trailerURL });
+    const film = new filmModel({ name, image: result.secure_url, ageRating, category, trailerURL, isPremiere });
 
     const savedFilm = await film.save();
 
@@ -42,7 +42,7 @@ const changePremierStatus = async (req, res) => {
     const film = await filmModel.findByIdAndUpdate(
       filmId,
       { isPremiere },
-      { new: true }
+      { returnDocument: "after" }
     );
 
     if (!film) {

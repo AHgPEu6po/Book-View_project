@@ -84,4 +84,28 @@ const getSessionListData = async (req, res) => {
   }
 };
 
-export { createSessionList, deleteSessionList, getSessionListData };
+const listAllSessionLists = async (req, res) => {
+  try {
+
+    const lists = await sessionListModel
+      .find()
+      .populate("cinema_id")
+      .populate("film_id")
+      .populate("list");
+
+    res.json({
+      success: true,
+      lists
+    });
+
+  } catch (error) {
+    logger.error(error.message);
+
+    res.json({
+      success: false,
+      message: error.message
+    });
+  }
+};
+
+export { createSessionList, deleteSessionList, getSessionListData, listAllSessionLists };

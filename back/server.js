@@ -16,14 +16,6 @@ const startServer = async () => {
     await connectCloudinary()
     logger.info("Cloudinary connected");
 
-    await new Promise((resolve, reject) => {
-      exec("npx migrate-mongo up", (err) => {
-        if (err) return reject(err)
-        logger.info("Migrations applied")
-        resolve()
-      })
-    })
-
     server = app.listen(port, () => {
       logger.info(`Server started on port: ${port}`)
     })
