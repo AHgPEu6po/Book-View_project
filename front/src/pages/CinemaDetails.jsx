@@ -1,13 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useContext, useMemo } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Select from "react-select";
 import SessionCard from "../components/SessionCard";
-import { assets, cinemas, allGenres, allAgeRatings, sessionLists, sessions, films } from "../assets/assets";
+import { assets, allGenres, allAgeRatings } from "../assets/assets";
+import axios from "axios";
+import { AppContext } from "../context/AppContext";
 
 const CinemaDetails = () => {
   const { id } = useParams();
 
-  const cinema = cinemas.find(c => c._id === id);
+  const { backendUrl, navigate } = useContext(AppContext);
+
+  const [cinema, setCinema] = useState(null);
+  const [cinemas, setCinemas] = useState([]);
+
+  const [filmsWithSessions, setFilmsWithSessions] = useState([]);
 
   const [search, setSearch] = useState("");
   const [genres, setGenres] = useState([]);
@@ -15,7 +22,158 @@ const CinemaDetails = () => {
   const [age, setAge] = useState(null);
   const [formats, setFormats] = useState([]);
 
-  const navigate = useNavigate();
+  const fetchCinema = async () => {
+    try {
+      const res = await axios.post(
+        backendUrl + "/api/cinema/single",
+        {
+          cinemaId: id,
+        }
+      );
+
+      if (res.data.success) {
+        setCinema(res.data.cinema);
+
+        await buildFilms(res.data.cinema);
+      }
+
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const fetchCinemas = async () => {
+    try {
+      const res = await axios.get(
+        backendUrl + "/api/cinema/names"
+      );
+
+      if (res.data.success) {
+        setCinemas(res.data.cinemas);
+      }
+
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const buildFilms = async (cinemaData) => {
+    try {
+      const result = [];
+
+      for (const listId of cinemaData.lists || []) {
+
+        const listRes = await axios.post(
+          backendUrl + "/api/sessionList/get",
+          {
+            sessionListId: listId,
+          }
+        );
+
+        if (!listRes.data.success) continue;
+
+        const list = listRes.data.list;
+
+        const filmRes = await axios.post(
+          backendUrl + "/api/film/single",
+          {
+            filmId: list.film_id._id,
+          }
+        );
+
+        if (!filmRes.data.success) continue;
+
+        const film = filmRes.data.film;
+
+        const sessions = [];
+
+        for (const sessionId of list.list || []) {
+
+          const sessionRes = await axios.post(
+            backendUrl + "/api/session/get",
+            {
+              sessionId,
+            }
+          );
+
+          if (sessionRes.data.success) {
+            sessions.push(sessionRes.data.session);
+          }
+        }
+
+        result.push({
+          ...film,
+          sessions,
+        });
+      }
+
+      setFilmsWithSessions(result);
+
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchCinema();
+    fetchCinemas();
+  }, [id]);
+
+  const filteredFilmsWithSessions = useMemo(() => {
+    return filmsWithSessions
+      .map((film) => {
+
+        let filteredSessions = [...film.sessions];
+
+        if (date) {
+          filteredSessions = filteredSessions.filter(
+            (s) => s.date === date
+          );
+        }
+
+        if (formats.length > 0) {
+          filteredSessions = filteredSessions.filter((s) =>
+            formats.some(
+              (f) => f.value === s.format
+            )
+          );
+        }
+
+        return {
+          ...film,
+          sessions: filteredSessions,
+        };
+      })
+      .filter((film) => {
+
+        const matchesSearch = film.name
+          .toLowerCase()
+          .includes(search.toLowerCase());
+
+        const matchesGenres =
+          genres.length > 0
+            ? genres.every((g) =>
+                film.category?.includes(g.value)
+              )
+            : true;
+
+        const getAgeNumber = (rating) =>
+          parseInt(rating) || 0;
+
+        const matchesAge = age
+          ? getAgeNumber(film.ageRating) <=
+            getAgeNumber(age.value)
+          : true;
+
+        return (
+          matchesSearch &&
+          matchesGenres &&
+          matchesAge &&
+          film.sessions.length > 0
+        );
+      });
+
+  }, [ filmsWithSessions, search, genres, age, date, formats ]);
 
   if (!cinema) {
     return <div className="p-6">Кінотеатр не знайдено</div>;
@@ -38,51 +196,6 @@ const CinemaDetails = () => {
 
     return `${date.getDate()} ${months[date.getMonth()]}, ${days[date.getDay()]}`;
   };
-
-  const cinemaLists = sessionLists.filter(
-    (l) => l.cinema_id === cinema._id
-  );
-
-  const filmsWithSessions = cinemaLists.map((list) => {
-    const film = films.find((f) => f._id === list.film_id);
-
-    let filmSessions = sessions
-      .filter((s) => s.list_id === list._id)
-      .sort((a, b) => a.time.localeCompare(b.time));
-
-    if (date) {
-      filmSessions = filmSessions.filter((s) => s.date === date);
-    }
-
-    if (formats.length > 0) {
-      filmSessions = filmSessions.filter((s) =>
-        formats.some((f) => f.value === s.format)
-      );
-    }
-
-    return {
-      ...film,
-      sessions: filmSessions,
-    };
-  });
-
-    const filteredFilmsWithSessions = filmsWithSessions.filter((film) => {
-    const matchesSearch = film.name
-      .toLowerCase()
-      .includes(search.toLowerCase());
-
-    const matchesGenres =
-      genres.length > 0
-        ? genres.every((g) => film.category?.includes(g.value))
-        : true;
-
-    const getAgeNumber = (rating) => parseInt(rating) || 0;
-    const matchesAge = age
-      ? getAgeNumber(film.ageRating) <= getAgeNumber(age.value)
-      : true;
-
-    return matchesSearch && matchesGenres && matchesAge;
-  });
 
   const customSelectStyles = {
     control: (provided) => ({

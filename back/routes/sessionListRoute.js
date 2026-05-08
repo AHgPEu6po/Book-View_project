@@ -6,7 +6,7 @@ const sessionListRouter = express.Router();
 
 sessionListRouter.post("/create", adminAuth, createSessionList);
 sessionListRouter.post("/delete", adminAuth, deleteSessionList);
-sessionListRouter.get("/all", adminAuth, listAllSessionLists);
+sessionListRouter.get("/all", listAllSessionLists);
 sessionListRouter.post("/get", getSessionListData);
 
 export default sessionListRouter;

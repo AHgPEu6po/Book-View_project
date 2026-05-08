@@ -1,52 +1,99 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useContext, useMemo } from "react";
 import Select from "react-select";
-import { films, cinemas, assets, allGenres, sessionLists, allAgeRatings } from "../assets/assets";
+import axios from "axios";
+import { AppContext } from "../context/AppContext";
 import EventCard from "../components/EventCard";
+import { assets, allGenres, allAgeRatings } from "../assets/assets";
 
 const Films = () => {
+  const { backendUrl } = useContext(AppContext);
+
+  const [films, setFilms] = useState([]);
+  const [cinemas, setCinemas] = useState([]);
+  const [sessionLists, setSessionLists] = useState([]);
+
   const [search, setSearch] = useState("");
   const [selectedCinemas, setSelectedCinemas] = useState([]);
   const [age, setAge] = useState(null);
   const [genres, setGenres] = useState([]);
   const [onlyPremiere, setOnlyPremiere] = useState(false);
 
-  const filteredFilms = films.filter((film) => {
-    const matchesSearch = film.name
-      .toLowerCase()
-      .includes(search.toLowerCase());
+  const fetchFilms = async () => {
+    try {
+      const res = await axios.get(backendUrl + "/api/film/available");
+      if (res.data.success) setFilms(res.data.films);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
-    const matchesCinema =
-      selectedCinemas.length > 0
-        ? sessionLists.some(
-            (list) =>
-              list.film_id === film._id &&
-              selectedCinemas.some(sel => sel.value === list.cinema_id)
-          )
+  const fetchCinemas = async () => {
+    try {
+      const res = await axios.get(backendUrl + "/api/cinema/names");
+      if (res.data.success) setCinemas(res.data.cinemas);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const fetchSessionLists = async () => {
+    try {
+      const res = await axios.get(backendUrl + "/api/sessionList/all");
+      if (res.data.success) setSessionLists(res.data.lists);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchFilms();
+    fetchCinemas();
+    fetchSessionLists();
+  }, []);
+
+  const filteredFilms = useMemo(() => {
+    return films.filter((film) => {
+      const matchesSearch = film.name
+        .toLowerCase()
+        .includes(search.toLowerCase());
+
+      const matchesCinema =
+        selectedCinemas.length > 0
+          ? sessionLists.some((list) => {
+              const filmId = String(list.film_id?._id || list.film_id);
+              const cinemaId = String(list.cinema_id?._id || list.cinema_id);
+
+              return (
+                filmId === String(film._id) &&
+                selectedCinemas.some(
+                  (sel) => String(sel.value) === cinemaId
+                )
+              );
+            })
+          : true;
+
+      const matchesAge = age
+        ? parseInt(film.ageRating || 0) <= parseInt(age.value)
         : true;
-    
-    const getAgeNumber = (rating) => parseInt(rating) || 0;
 
-    const matchesAge = age
-      ? getAgeNumber(film.ageRating) <= getAgeNumber(age.value)
-      : true;
-    
       const matchesGenres =
-      genres.length > 0
-        ? genres.every((g) => film.category?.includes(g.value))
+        genres.length > 0
+          ? genres.every((g) => film.category?.includes(g.value))
+          : true;
+
+      const matchesPremiere = onlyPremiere
+        ? film.isPremiere
         : true;
 
-    const matchesPremiere = onlyPremiere
-      ? film.isPremiere === true
-      : true;
-
-    return (
-      matchesSearch &&
-      matchesCinema &&
-      matchesAge &&
-      matchesGenres &&
-      matchesPremiere
-    );
-  });
+      return (
+        matchesSearch &&
+        matchesCinema &&
+        matchesAge &&
+        matchesGenres &&
+        matchesPremiere
+      );
+    });
+  }, [films, search, selectedCinemas, age, genres, onlyPremiere]);
 
   const customSelectStyles = {
     control: (provided) => ({
@@ -105,7 +152,7 @@ const Films = () => {
 
         <Select
           isMulti
-          options={cinemas.map(c => ({ value: c._id, label: c.name }))}
+          options={cinemas.map((c => ({ value: c._id, label: c.name })))}
           value={selectedCinemas}
           onChange={setSelectedCinemas}
           placeholder="Кінотеатр"

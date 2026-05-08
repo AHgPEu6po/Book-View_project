@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import Navbar from './components/Navbar'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import Home from './pages/Home'
@@ -12,14 +12,16 @@ import CinemaDetails from './pages/CinemaDetails'
 import Cinemas from './pages/Cinemas'
 import Session from './pages/Session'
 import Login from './components/Login'
+import Profile from './pages/Profile'
+import { AppContext } from "./context/AppContext";
 
 const App = () => {
 
-  const [showLogin, setShowLogin] = useState(false)
+  const { showLogin } = useContext(AppContext);
 
   return (
     <>
-      {showLogin && <Login setShowLogin={setShowLogin}/>}
+      {showLogin && <Login/>}
       
       <Navbar/>
 
@@ -32,6 +34,7 @@ const App = () => {
         <Route path='/session/:id' element={<Session/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/contact' element={<Contact/>}/>
+        <Route path='/profile' element={<Profile/>}/>
         <Route path='/my-bookings' element={<MyBookings/>}/>
       </Routes>
 

@@ -1,13 +1,28 @@
-import React, { useState } from 'react'
+import React, { useContext, useState, useEffect, useRef } from 'react'
 import { assets, menuLinks } from '../assets/assets'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import { AppContext } from "../context/AppContext";
 
-const Navbar = ({setShowLogin}) => {
+const Navbar = () => {
 
     const location = useLocation()
     const [open, setOpen] = useState(false)
-    const navigate = useNavigate()
+    const [profileOpen, setProfileOpen] = useState(false)
+    const { setShowLogin, token, logout, userData, navigate } = useContext(AppContext);
 
+    const menuRef = useRef(null)
+
+    useEffect(() => {
+        const handleClickOutside = (e) => {
+            if (menuRef.current && !menuRef.current.contains(e.target)) {
+                setProfileOpen(false)
+            }
+        }
+
+        document.addEventListener("mousedown", handleClickOutside)
+        return () => document.removeEventListener("mousedown", handleClickOutside)
+    }, [])
+    
   return (
     <div className={`flex items-center justify-between px-6 md:px-16 lg:px-24 
     xl:px-32 py-4 text-gray-600 border-b border-borderColor relative transition-all 
@@ -28,8 +43,49 @@ const Navbar = ({setShowLogin}) => {
             ))}
 
             <div className='flex items-start sm:items-center gap-6'>
-                <button onClick={()=> setShowLogin(true)} className='cursor-pointer px-8 py-2 bg-primary 
-                hover:bg-primary-dull transition-all text-white rounded-lg'>Log in</button>
+                {!token ? (
+                    <button onClick={()=> setShowLogin(true)} className='cursor-pointer px-8 py-2 bg-primary 
+                    hover:bg-primary-dull transition-all text-white rounded-lg'>Log in</button>
+                ):(
+                    <div className="relative">
+
+                        <img src={assets.profile} alt="profile" className="h-8 w-8 cursor-pointer rounded-full"
+                            onClick={() => setProfileOpen(!profileOpen)}
+                        />
+
+                        {profileOpen && (
+                            <div className="absolute right-0 mt-2 w-44 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+
+                                <button
+                                    onClick={() => { navigate("/profile"), setProfileOpen(false) }}
+                                    className="w-full text-left px-4 py-2 hover:bg-gray-100"
+                                >
+                                    Профіль
+                                </button>
+                                <button
+                                    onClick={() => { navigate("/tickets"), setProfileOpen(false) }}
+                                    className="w-full text-left px-4 py-2 hover:bg-gray-100"
+                                >
+                                    Мої квитки
+                                </button>
+
+                                <button
+                                    onClick={() => { navigate("/history"), setProfileOpen(false) }}
+                                    className="w-full text-left px-4 py-2 hover:bg-gray-100"
+                                >
+                                    Історія
+                                </button>
+
+                                <button onClick={() => { logout(), setProfileOpen(false) }}
+                                    className="w-full text-left px-4 py-2 hover:bg-red-100 text-red-500"
+                                >
+                                    Logout
+                                </button>
+                            </div>
+                        )}
+                    </div>
+                )}
+                
             </div>
         </div>
 

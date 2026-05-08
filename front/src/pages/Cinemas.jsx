@@ -1,14 +1,54 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useContext, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import Select from "react-select";
-import { assets, cinemas, cities, districts } from "../assets/assets";
+import axios from "axios";
+import { assets, cities, districts } from "../assets/assets";
+import { AppContext } from "../context/AppContext";
 
 const Cinemas = () => {
-  const navigate = useNavigate()
-  
+  const navigate = useNavigate();
+  const { backendUrl } = useContext(AppContext);
+
+  const [cinemas, setCinemas] = useState([]);
   const [search, setSearch] = useState("");
+
   const [selectedCity, setSelectedCity] = useState(null);
   const [selectedDistricts, setSelectedDistricts] = useState([]);
+
+  const fetchCinemas = async () => {
+    try {
+      const res = await axios.get(backendUrl + "/api/cinema/all");
+
+      if (res.data.success) {
+        setCinemas(res.data.cinemas);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchCinemas();
+  }, []);
+
+  const filteredCinemas = useMemo(() => {
+    return cinemas.filter((cinema) => {
+      const matchesSearch =
+        cinema.name.toLowerCase().includes(search.toLowerCase()) ||
+        cinema.address.toLowerCase().includes(search.toLowerCase());
+
+      const matchesCity = selectedCity
+        ? cinema.city === selectedCity
+        : true;
+
+      const matchesDistrict =
+        selectedDistricts.length > 0
+          ? selectedDistricts.includes(cinema.district)
+          : true;
+
+      return matchesSearch && matchesCity && matchesDistrict;
+    });
+  }, [cinemas, search, selectedCity, selectedDistricts]);
 
   const handleCityChange = (selectedOption) => {
     setSelectedCity(selectedOption ? selectedOption.value : null);
@@ -16,22 +56,12 @@ const Cinemas = () => {
   };
 
   const handleDistrictChange = (selectedOptions) => {
-    setSelectedDistricts(selectedOptions ? selectedOptions.map(opt => opt.value) : []);
+    setSelectedDistricts(
+      selectedOptions
+        ? selectedOptions.map((opt) => opt.value)
+        : []
+    );
   };
-
-  const filteredCinemas = cinemas.filter(cinema => {
-    const matchesSearch =
-      cinema.name.toLowerCase().includes(search.toLowerCase()) ||
-      cinema.address.toLowerCase().includes(search.toLowerCase());
-
-    const matchesCity = selectedCity ? cinema.city === selectedCity : true;
-
-    const matchesDistrict = selectedDistricts.length > 0
-      ? selectedDistricts.includes(cinema.district)
-      : true;
-
-    return matchesSearch && matchesCity && matchesDistrict;
-  });
 
   const customSelectStyles = {
     control: (provided) => ({
@@ -113,7 +143,7 @@ const Cinemas = () => {
       </div>
 
       <div className="md:w-3/4 w-full space-y-4">
-        {filteredCinemas.map(cinema => (
+        {filteredCinemas.map((cinema) => (
           <div
             key={cinema._id}
             onClick={() => navigate(`/cinemas/${cinema._id}`)}

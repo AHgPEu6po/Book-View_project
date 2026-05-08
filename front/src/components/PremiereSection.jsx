@@ -1,16 +1,41 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import Title from './Title'
-import { films } from '../assets/assets'
+import { AppContext } from "../context/AppContext";
 import EventCard from './EventCard'
+import { toast } from 'react-toastify'
+import axios from 'axios'
 
 const PremiereSection = () => {
 
-    const [Premieres, setPremieres] = useState([]);
+    const { backendUrl } = useContext(AppContext);
+
+    const [premieres, setPremieres] = useState([]);
+
+    const fetchPremieres = async () => {
+        try {
+            const res = await axios.get(
+                backendUrl + '/api/film/available'
+            );
+
+            if (res.data.success) {
+                const filtered = res.data.films.filter(
+                    (film) => film.isPremiere
+                );
+
+                setPremieres(filtered);
+            } else {
+                toast.error(res.data.message);
+            }
+
+        } catch (error) {
+            console.log(error);
+            toast.error(error.message);
+        }
+    };
 
     useEffect(() => {
-        const premieres = films.filter((film) => (film.isPremiere))
-        setPremieres(premieres.slice(0, 10))
-    }, [films])
+        fetchPremieres();
+    }, []);
 
   return (
     <div className='flex flex-col items-center my-10 px-6 md:px-16 lg:px-24 xl:px-32'>
@@ -24,7 +49,7 @@ const PremiereSection = () => {
         
         <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6 mt-18 items-stretch'>
             {
-                Premieres.map((film) =>(
+                premieres.map((film) =>(
                     <div key={film._id}>
                         <EventCard event={film}/>
                     </div>

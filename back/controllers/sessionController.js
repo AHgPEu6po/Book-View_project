@@ -102,7 +102,6 @@ const getSessionData = async (req, res) => {
 
     const session = await sessionModel
       .findById(sessionId)
-      .populate("room_id");
 
     if (!session) {
       return res.json({ success: false, message: "Session not found" });

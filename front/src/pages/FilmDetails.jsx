@@ -1,55 +1,142 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useContext, useMemo } from "react";
 import { useParams } from "react-router-dom";
 import Select from "react-select";
-import { films, allCinemaNames, cinemas, sessionLists, sessions  } from "../assets/assets";
 import { Play, X } from "lucide-react";
 import SessionCard from "../components/SessionCard";
+import axios from "axios";
+import { AppContext } from "../context/AppContext";
 
 const FilmDetails = () => {
   const { id } = useParams();
-  const film = films.find(f => f._id === id);
+  const { backendUrl } = useContext(AppContext);
+
+  const [film, setFilm] = useState(null);
+  const [cinemas, setCinemas] = useState([]);
+  const [sessionsByCinema, setSessionsByCinema] = useState({});
 
   const [selectedCinemas, setSelectedCinemas] = useState([]);
   const [date, setDate] = useState("");
   const [formats, setFormats] = useState([]);
 
-  if (!film) return <div className="p-6">Фільм не знайдено</div>;
+  const fetchFilm = async () => {
+    const res = await axios.post(backendUrl + "/api/film/single", {
+      filmId: id,
+    });
 
-  const filmLists = sessionLists.filter(
-    (l) => l.film_id === film._id
-  );
-
-  const cinemasWithSessions = filmLists.map((list) => {
-    const cinema = cinemas.find((c) => c._id === list.cinema_id);
-
-    let cinemaSessions = sessions
-      .filter((s) => s.list_id === list._id)
-      .sort((a, b) => a.time.localeCompare(b.time));
-
-    if (date) {
-      cinemaSessions = cinemaSessions.filter((s) => s.date === date);
+    if (res.data.success) {
+      setFilm(res.data.film);
     }
+  };
 
-    if (formats.length > 0) {
-      cinemaSessions = cinemaSessions.filter((s) =>
-        formats.some((f) => f.value === s.format)
+  const fetchCinemas = async () => {
+    const res = await axios.get(backendUrl + "/api/cinema/names");
+    if (res.data.success) setCinemas(res.data.cinemas);
+  };
+
+  const buildSessions = async (filmData) => {
+    const result = {};
+
+    for (const listId of filmData.lists || []) {
+
+      const listRes = await axios.post(
+        backendUrl + "/api/sessionList/get",
+        { sessionListId: listId }
       );
+
+      if (!listRes.data.success) continue;
+
+      const list = listRes.data.list;
+
+      const cinemaRes = await axios.post(
+        backendUrl + "/api/cinema/single",
+        { cinemaId: list.cinema_id._id }
+      );
+
+      if (!cinemaRes.data.success) continue;
+
+      const cinema = cinemaRes.data.cinema;
+
+      const sessions = [];
+
+      for (const sessionId of list.list || []) {
+
+        const sessionRes = await axios.post(
+          backendUrl + "/api/session/get",
+          { sessionId }
+        );
+
+        if (sessionRes.data.success) {
+          sessions.push(sessionRes.data.session);
+        }
+      }
+
+      if (!result[cinema._id]) {
+        result[cinema._id] = {
+          cinema,
+          sessions: [],
+        };
+      }
+      result[cinema._id].sessions.push(...sessions);
     }
+    setSessionsByCinema(result);
+  };
 
-    return {
-      ...cinema,
-      sessions: cinemaSessions,
+  useEffect(() => {
+    const init = async () => {
+      await fetchFilm();
+      await fetchCinemas();
+
+      const res = await axios.post(backendUrl + "/api/film/single", {
+        filmId: id,
+      });
+
+      if (res.data.success) {
+        setFilm(res.data.film);
+        await buildSessions(res.data.film);
+      }
     };
-  });
 
-  const filteredCinemasWithSessions = cinemasWithSessions.filter((cinema) => {
-    const matchesCinema =
-      selectedCinemas.length > 0
-        ? selectedCinemas.some((c) => c.value === cinema.name)
-        : true;
+    init();
+  }, [id]);
 
-    return matchesCinema;
-  });
+  const filtered = useMemo(() => {
+    return Object.values(sessionsByCinema)
+      .map((item) => {
+        const matchesCinema =
+          selectedCinemas.length > 0
+            ? selectedCinemas.some(
+                (c) => c.value === item.cinema._id
+              )
+            : true;
+
+        let filteredSessions = [...item.sessions];
+
+        if (date) {
+          filteredSessions = filteredSessions.filter(
+            (s) => s.date === date
+          );
+        }
+
+        if (formats.length > 0) {
+          filteredSessions = filteredSessions.filter((s) =>
+            formats.some((f) => f.value === s.format)
+          );
+        }
+
+        return {
+          cinema: item.cinema,
+          sessions: filteredSessions,
+          matchesCinema,
+        };
+      })
+      .filter(
+        (item) =>
+          item.matchesCinema &&
+          item.sessions.length > 0
+      );
+  }, [sessionsByCinema, selectedCinemas, date, formats]);
+
+  if (!film) return <div className="p-6">Фільм не знайдено</div>;
 
   const formatDate = (dateStr) => {
     const date = new Date(dateStr);
@@ -149,7 +236,7 @@ const FilmDetails = () => {
 
           <Select
             isMulti
-            options={allCinemaNames.map(name => ({ value: name, label: name }))}
+            options={cinemas.map((c) => ({ value: c._id, label: c.name }))}
             value={selectedCinemas}
             onChange={setSelectedCinemas}
             placeholder="Кінотеатр"
@@ -178,17 +265,20 @@ const FilmDetails = () => {
         </div>
 
         <div className="lg:w-3/4 w-full space-y-6">
-          {filteredCinemasWithSessions.length === 0 && (
+          {filtered.length === 0 && (
             <p className="text-gray-400 text-center">
               Сеанси поки що відсутні
             </p>
           )}
 
-          {filteredCinemasWithSessions.map((cinema) => (
+          {filtered.map((item) => (
             <SessionCard
-              key={cinema._id}
+              key={item.cinema._id}
               film={film}
-              cinema={cinema}
+              cinema={{
+                ...item.cinema,
+                sessions: item.sessions,
+              }}
               formatDate={formatDate}
               isFilmPage
             />
