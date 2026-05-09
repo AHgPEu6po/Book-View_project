@@ -1,5 +1,10 @@
 import mongoose from "mongoose";
 
+const historySchema = new mongoose.Schema({
+    film_id: { type: mongoose.Schema.Types.ObjectId, ref: "film" },
+    sessionDate: { type: Date } 
+  }, { _id: false } );
+
 const userSchema = new mongoose.Schema({
   name: { type: String, required: true },
   email: { type: String, required: true, unique: true },
@@ -10,7 +15,7 @@ const userSchema = new mongoose.Schema({
   excludedGenres: [{ type: String }],
   city: String,
   district: String,
-  history: [{ type: mongoose.Schema.Types.ObjectId, ref: "order" }],
+  history: [historySchema],
 }, { timestamps: true });
 
 

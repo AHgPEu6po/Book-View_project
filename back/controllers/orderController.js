@@ -94,7 +94,8 @@ const placeOrderStripe = async (req, res) => {
 
 const verifyStripe = async (req, res) => {
   try {
-    const { success, orderIds, userId } = req.body;
+    const userId = req.user.id;
+    const { success, orderIds } = req.body;
 
     if (success !== "true") {
       await orderModel.deleteMany({ _id: { $in: orderIds } });
@@ -134,10 +135,6 @@ const verifyStripe = async (req, res) => {
 
       order.status = "paid";
       await order.save();
-
-      await userModel.findByIdAndUpdate(userId, {
-        $push: { history: order._id }
-      });
     }
 
     await userModel.findByIdAndUpdate(userId, {
@@ -159,7 +156,15 @@ const getUserOrders = async (req, res) => {
     const orders = await orderModel
       .find({ user_id: userId })
       .populate("film_id")
-      .populate("session_id")
+      .populate({
+        path: "session_id",
+        populate: {
+          path: "list_id",
+          populate: {
+            path: "cinema_id"
+          }
+        }
+      })
       .sort({ createdAt: -1 });
 
     res.json({
@@ -214,5 +219,59 @@ const cancelOrder = async (req, res) => {
   }
 };
 
+const deleteOrder = async (req, res) => {
+  try {
 
-export { placeOrderStripe, verifyStripe, getUserOrders, cancelOrder };
+    const { orderId } = req.body;
+    const order = await orderModel.findById(orderId);
+
+    if (!order) {
+      return res.json({
+        success: false,
+        message: "Order not found",
+      });
+    }
+
+    const session = await sessionModel.findById(
+      order.session_id
+    );
+
+    if (!session) {
+      return res.json({
+        success: false,
+        message: "Session not found",
+      });
+    }
+
+    await userModel.findByIdAndUpdate(
+      order.user_id,
+      {
+        $push: {
+          history: {
+            film_id: order.film_id,
+            sessionDate: session.date,
+          },
+        },
+      }
+    );
+
+    await orderModel.findByIdAndDelete(orderId);
+
+    res.json({
+      success: true,
+      message: "Order moved to history",
+    });
+
+  } catch (error) {
+
+    logger.error(error.message);
+
+    res.json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+
+export { placeOrderStripe, verifyStripe, getUserOrders, cancelOrder, deleteOrder };

@@ -47,42 +47,49 @@ const Navbar = () => {
                     <button onClick={()=> setShowLogin(true)} className='cursor-pointer px-8 py-2 bg-primary 
                     hover:bg-primary-dull transition-all text-white rounded-lg'>Log in</button>
                 ):(
-                    <div className="relative">
+                    <div className='flex gap-4'>
+                        <div className="relative">
 
-                        <img src={assets.profile} alt="profile" className="h-8 w-8 cursor-pointer rounded-full"
-                            onClick={() => setProfileOpen(!profileOpen)}
-                        />
+                            <img src={assets.profile} alt="profile" className="h-8 w-8 cursor-pointer rounded-full"
+                                onClick={() => setProfileOpen(!profileOpen)}
+                            />
 
-                        {profileOpen && (
-                            <div className="absolute right-0 mt-2 w-44 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+                            {profileOpen && (
+                                <div className="absolute right-0 mt-2 w-44 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
 
-                                <button
-                                    onClick={() => { navigate("/profile"), setProfileOpen(false) }}
-                                    className="w-full text-left px-4 py-2 hover:bg-gray-100"
-                                >
-                                    Профіль
-                                </button>
-                                <button
-                                    onClick={() => { navigate("/tickets"), setProfileOpen(false) }}
-                                    className="w-full text-left px-4 py-2 hover:bg-gray-100"
-                                >
-                                    Мої квитки
-                                </button>
+                                    <button
+                                        onClick={() => { navigate("/profile"), setProfileOpen(false) }}
+                                        className="w-full text-left px-4 py-2 hover:bg-gray-100"
+                                    >
+                                        Профіль
+                                    </button>
+                                    <button
+                                        onClick={() => { navigate("/tickets"), setProfileOpen(false) }}
+                                        className="w-full text-left px-4 py-2 hover:bg-gray-100"
+                                    >
+                                        Мої квитки
+                                    </button>
 
-                                <button
-                                    onClick={() => { navigate("/history"), setProfileOpen(false) }}
-                                    className="w-full text-left px-4 py-2 hover:bg-gray-100"
-                                >
-                                    Історія
-                                </button>
+                                    <button
+                                        onClick={() => { navigate("/history"), setProfileOpen(false) }}
+                                        className="w-full text-left px-4 py-2 hover:bg-gray-100"
+                                    >
+                                        Історія
+                                    </button>
 
-                                <button onClick={() => { logout(), setProfileOpen(false) }}
-                                    className="w-full text-left px-4 py-2 hover:bg-red-100 text-red-500"
-                                >
-                                    Logout
-                                </button>
-                            </div>
-                        )}
+                                    <button onClick={() => { logout(), setProfileOpen(false) }}
+                                        className="w-full text-left px-4 py-2 hover:bg-red-100 text-red-500"
+                                    >
+                                        Logout
+                                    </button>
+                                </div>
+                            )}
+                        </div>
+                        <div>
+                            <img src={assets.cart} alt="cart" className="h-8 w-8 cursor-pointer"
+                                onClick={() => navigate("/cart")}
+                            />
+                        </div>
                     </div>
                 )}
                 

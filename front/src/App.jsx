@@ -4,7 +4,6 @@ import { Route, Routes, useLocation } from 'react-router-dom'
 import Home from './pages/Home'
 import FilmDetails from './pages/FilmDetails'
 import Films from './pages/Films'
-import MyBookings from './pages/MyBookings'
 import About from './pages/About'
 import Footer from './components/Footer'
 import Contact from './pages/Contact'
@@ -13,6 +12,10 @@ import Cinemas from './pages/Cinemas'
 import Session from './pages/Session'
 import Login from './components/Login'
 import Profile from './pages/Profile'
+import MyTickets from './pages/MyTickets'
+import History from './pages/History'
+import Cart from './pages/Cart'
+import Verify from './pages/Verify'
 import { AppContext } from "./context/AppContext";
 
 const App = () => {
@@ -35,7 +38,10 @@ const App = () => {
         <Route path='/about' element={<About/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/profile' element={<Profile/>}/>
-        <Route path='/my-bookings' element={<MyBookings/>}/>
+        <Route path='/tickets' element={<MyTickets/>}/>
+        <Route path='/history' element={<History/>}/>
+        <Route path='/cart' element={<Cart/>}/>
+        <Route path='/verify' element={<Verify/>}/>
       </Routes>
 
       <Footer/>

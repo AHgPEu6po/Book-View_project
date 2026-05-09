@@ -171,5 +171,26 @@ const adminLogin = async (req, res) => {
     }
 }
 
+const getUserHistory = async (req, res) => {
+    try {
 
-export { loginUser, registerUser, updateUser, getUserDate, adminLogin }
+        const userId = req.user.id;
+
+        const user = await userModel.findById(userId).select( "history" );
+
+        if (!user) {
+            return res.json({ success: false, message: "User not found" });
+        }
+
+        res.json({ success: true, user });
+
+    } catch (error) {
+        if (process.env.NODE_ENV !== "test") {
+            logger.error(error.message)
+        }
+        res.json({ success: false, message: error.message });
+    }
+}
+
+
+export { loginUser, registerUser, updateUser, getUserDate, adminLogin, getUserHistory }

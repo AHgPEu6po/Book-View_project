@@ -12,6 +12,7 @@ import instagram from './instagram.svg'
 import twitter from './twitter-x.svg'
 import youtube from './youtube.svg'
 import profile from './profile.svg'
+import cart from './cart.svg'
 
 import event1 from './event1.jpg'
 import event2 from './event2.jpg'
@@ -55,7 +56,8 @@ export const assets = {
     instagram,
     twitter,
     youtube,
-    profile
+    profile,
+    cart
 }
 
 export const films = [

@@ -3,10 +3,11 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import EventCard from "../components/EventCard";
 import { AppContext } from "../context/AppContext";
+import { Check } from "lucide-react";
 
 const Session = () => {
   const { id } = useParams();
-  const { backendUrl } = useContext(AppContext);
+  const { backendUrl, token, cartItems, addToCart, deleteFromCart } = useContext(AppContext);
 
   const [session, setSession] = useState(null);
   const [room, setRoom] = useState(null);
@@ -117,6 +118,27 @@ const Session = () => {
     );
   };
 
+  const isSeatInCart = (rowNumber, seatNumber) => {
+    if (!cartItems[id]) return false;
+
+    return cartItems[id].some((seat) =>
+        seat.row === rowNumber && seat.number === seatNumber
+    );
+  };
+
+  const handleSeatClick = async (rowNumber, seatNumber, price) => {
+    if (!token) return;
+
+    const seat = { row: rowNumber, number: seatNumber, price };
+    const exists = isSeatInCart( rowNumber, seatNumber );
+
+    if (exists) { 
+      await deleteFromCart(id, seat);
+    } else {
+      await addToCart(id, seat);
+    }
+  };
+
   const maxSeats = Math.max(
     ...room.rows.map((row) => row.seats.length)
   );
@@ -188,17 +210,16 @@ const Session = () => {
                         );
                       }
 
-                      const seatData = getSeatData(
-                        row.rowNumber,
-                        seat.number
-                      );
-
-                      const isAvailable =
-                        seatData?.isAvailable;
-
+                      const seatData = getSeatData(row.rowNumber, seat.number );
+                      const isAvailable = seatData?.isAvailable;
                       const price = seatData?.price;
+                      const inCart = isSeatInCart( row.rowNumber, seat.number );
 
                       const getColor = () => {
+                        
+                        if (inCart) 
+                          return "bg-green-500 hover:bg-green-600 text-white";
+                        
                         if (!isAvailable)
                           return "bg-gray-300";
 
@@ -211,11 +232,26 @@ const Session = () => {
                       return (
                         <div
                           key={seat.number}
+                          onClick={() => {
+                            if (
+                              isAvailable
+                            ) {
+                              handleSeatClick(
+                                row.rowNumber,
+                                seat.number,
+                                price
+                              );
+                            }
+                          }}
                           className={`
                             w-7 h-7 rounded text-[10px]
                             flex items-center justify-center
                             cursor-pointer transition text-black
                             ${getColor()}
+                            ${isAvailable
+                                ? "cursor-pointer"
+                                : "cursor-not-allowed"
+                            }
                           `}
                           title={
                             isAvailable
@@ -223,7 +259,9 @@ const Session = () => {
                               : "Місце зайняте"
                           }
                         >
-                          {isAvailable
+                          {inCart ? (
+                              <Check size={14}/>
+                            ) : isAvailable
                             ? seat.number
                             : ""}
                         </div>
