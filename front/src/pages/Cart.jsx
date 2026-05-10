@@ -1,91 +1,97 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, useMemo } from "react";
 import axios from "axios";
 import { Trash2 } from "lucide-react";
 import { AppContext } from "../context/AppContext";
 
 const Cart = () => {
 
-  const { backendUrl, token, cartItems, deleteFromCart, getCartAmount, navigate } = useContext(AppContext);
+  const { backendUrl, token, cartItems, deleteFromCart, getCartAmount, navigate, formatDate } = useContext(AppContext);
   const [cartData, setCartData] = useState([]);
 
-  useEffect(() => {
-    const fetchCartData = async () => {
+ const fetchCartData = async () => {
 
-      try {
-        const tempData = [];
-        for (const sessionId in cartItems) {
-          const sessionRes = await axios.post( backendUrl + "/api/session/get",
-            {
-              sessionId,
-            }
-          );
+    try {
+      const sessionIds = Object.keys(cartItems);
 
-          if (!sessionRes.data.success) continue;
+      if (sessionIds.length === 0) {
+        setCartData([]);
+        return;
+      }
 
-          const session =
-            sessionRes.data.session;
+      const sessionRequests = sessionIds.map((sessionId) =>
+          axios.post(
+            backendUrl + "/api/session/get",
+            { sessionId }
+          )
+      );
 
-          const listRes = await axios.post( backendUrl + "/api/sessionList/get",
-            {
-              sessionListId: session.list_id,
-            }
-          );
+      const sessionResponses = await Promise.all(sessionRequests);
+      const validSessions = sessionResponses
+        .filter((res) => res.data.success)
+        .map((res, index) => ({
+          sessionId: sessionIds[index],
+          session: res.data.session,
+        }));
 
-          if (!listRes.data.success)
-            continue;
+      const listRequests = validSessions.map(
+        (item) =>
+          axios.post(
+            backendUrl + "/api/sessionList/get",
+            { sessionListId: item.session.list_id }
+          )
+      );
+
+      const listResponses = await Promise.all(listRequests)
+      const result = validSessions
+        .map((item, index) => {
+          const listRes = listResponses[index];
+
+          if (!listRes.data.success) {
+            return null;
+          }
 
           const list = listRes.data.list;
-          const filmId = list.film_id?._id || list.film_id;
-          const cinemaId = list.cinema_id?._id || list.cinema_id;
 
-          const filmRes = await axios.post( backendUrl + "/api/film/single",
-            {
-              filmId,
-            }
-          );
+          return {
+            sessionId: item.sessionId,
+            session: item.session,
+            film: list.film_id,
+            cinema: list.cinema_id,
+            seats: cartItems[item.sessionId] || [],
+          };
+        })
+        .filter(Boolean);
 
-          const cinemaRes = await axios.post( backendUrl + "/api/cinema/single",
-              {
-                cinemaId,
-              }
-            );
+      setCartData(result);
+        
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-          tempData.push({ sessionId, session, film: filmRes.data.film, cinema: cinemaRes.data.cinema, seats: cartItems[sessionId] });
-        }
-
-        setCartData(tempData);
-
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
+  useEffect(() => {
     if (token) {
       fetchCartData();
     }
+  }, [token, cartItems]);
 
-  }, [cartItems, token, backendUrl]);
-
-  const formatDate = (dateStr) => {
-    const date = new Date(dateStr);
-
-    const days = ["Нд", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"];
-    const months = [
-      "січня","лютого","березня","квітня","травня","червня",
-      "липня","серпня","вересня","жовтня","листопада","грудня"
-    ];
-
-    return `${date.getDate()} ${
-      months[date.getMonth()]
-    }, ${days[date.getDay()]}`
-  };
+  const totalTickets = useMemo(() =>
+      Object.values(cartItems)
+        .flat()
+        .length,
+    [cartItems]
+  );
 
   const groupSeatsByRow = (seats) => {
-    const grouped = {};
-    seats.forEach((seat) => {
-      if (!grouped[seat.row]) { grouped[seat.row] = [] } grouped[seat.row].push(seat)
-    });
-    return grouped;
+    return seats.reduce((acc, seat) => {
+
+      if (!acc[seat.row]) {
+        acc[seat.row] = [];
+      }
+
+      acc[seat.row].push(seat);
+      return acc;
+    }, {});
   };
 
   const handleCheckout = async () => {
@@ -175,7 +181,7 @@ const Cart = () => {
                     </div>
 
                     <div className="space-y-4 pt-2">
-                      {Object.entries( groupedSeats ).map(([row, seats]) => (
+                      {Object.entries(groupedSeats).map(([row, seats]) => (
                           <div
                             key={row}
                             className="border border-gray-200 rounded-xl p-4"
@@ -246,7 +252,7 @@ const Cart = () => {
                 </p>
 
                 <p className="text-lg font-medium">
-                  {Object.values(cartItems).flat().length}
+                  {totalTickets}
                 </p>
               </div>
 

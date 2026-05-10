@@ -70,7 +70,7 @@ const getSessionListData = async (req, res) => {
       .findById(sessionListId)
       .populate("cinema_id")
       .populate("film_id")
-      .populate("list");
+      .populate({ path: "list", select: "-seats" });
 
     if (!list) {
       return res.json({ success: false, message: "Not found" });

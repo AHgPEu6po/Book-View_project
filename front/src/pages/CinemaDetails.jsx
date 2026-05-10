@@ -9,7 +9,7 @@ import { AppContext } from "../context/AppContext";
 const CinemaDetails = () => {
   const { id } = useParams();
 
-  const { backendUrl, navigate } = useContext(AppContext);
+  const { backendUrl, navigate, customSelectStyles, formatDate } = useContext(AppContext);
 
   const [cinema, setCinema] = useState(null);
   const [cinemas, setCinemas] = useState([]);
@@ -21,6 +21,36 @@ const CinemaDetails = () => {
   const [date, setDate] = useState("");
   const [age, setAge] = useState(null);
   const [formats, setFormats] = useState([]);
+
+  const buildFilms = async (cinemaData) => {
+
+    try {
+      const requests = (cinemaData.lists || []).map(
+        (listId) =>
+          axios.post(
+            backendUrl + "/api/sessionList/get",
+            {
+              sessionListId: listId,
+            }
+          )
+      );
+
+      const responses = await Promise.all(requests);
+
+      const result = responses
+        .filter((res) => res.data.success)
+        .map((res) => {
+          const list = res.data.list;
+          return {
+            ...list.film_id,
+            sessions: list.list || [],
+          };
+        });
+      setFilmsWithSessions(result);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const fetchCinema = async () => {
     try {
@@ -34,7 +64,11 @@ const CinemaDetails = () => {
       if (res.data.success) {
         setCinema(res.data.cinema);
 
-        await buildFilms(res.data.cinema);
+        if (res.data.success) {
+          const cinemaData = res.data.cinema;
+          setCinema(cinemaData);
+          buildFilms(cinemaData);
+        }
       }
 
     } catch (error) {
@@ -57,67 +91,46 @@ const CinemaDetails = () => {
     }
   };
 
-  const buildFilms = async (cinemaData) => {
-    try {
-      const result = [];
-
-      for (const listId of cinemaData.lists || []) {
-
-        const listRes = await axios.post(
-          backendUrl + "/api/sessionList/get",
-          {
-            sessionListId: listId,
-          }
-        );
-
-        if (!listRes.data.success) continue;
-
-        const list = listRes.data.list;
-
-        const filmRes = await axios.post(
-          backendUrl + "/api/film/single",
-          {
-            filmId: list.film_id._id,
-          }
-        );
-
-        if (!filmRes.data.success) continue;
-
-        const film = filmRes.data.film;
-
-        const sessions = [];
-
-        for (const sessionId of list.list || []) {
-
-          const sessionRes = await axios.post(
-            backendUrl + "/api/session/get",
-            {
-              sessionId,
-            }
-          );
-
-          if (sessionRes.data.success) {
-            sessions.push(sessionRes.data.session);
-          }
-        }
-
-        result.push({
-          ...film,
-          sessions,
-        });
-      }
-
-      setFilmsWithSessions(result);
-
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
     fetchCinema();
     fetchCinemas();
   }, [id]);
+
+  const genreOptions = useMemo(
+    () =>
+      allGenres.map((g) => ({
+        value: g,
+        label: g,
+      })),
+    []
+  );
+
+  const ageOptions = useMemo(
+    () =>
+      allAgeRatings.map((a) => ({
+        value: a,
+        label: a,
+      })),
+    []
+  );
+
+  const formatOptions = useMemo(
+    () => [
+      { value: "2D", label: "2D" },
+      { value: "3D", label: "3D" },
+      { value: "RealD", label: "RealD" },
+    ],
+    []
+  );
+
+  const cinemaOptions = useMemo(
+    () =>
+      cinemas.map((c) => ({
+        value: c._id,
+        label: c.name,
+      })),
+    [cinemas]
+  );
 
   const filteredFilmsWithSessions = useMemo(() => {
     return filmsWithSessions
@@ -185,57 +198,6 @@ const CinemaDetails = () => {
     }
   };
 
-  const formatDate = (dateStr) => {
-    const date = new Date(dateStr);
-
-    const days = ["Нд", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"];
-    const months = [
-      "січня","лютого","березня","квітня","травня","червня",
-      "липня","серпня","вересня","жовтня","листопада","грудня"
-    ];
-
-    return `${date.getDate()} ${months[date.getMonth()]}, ${days[date.getDay()]}`;
-  };
-
-  const customSelectStyles = {
-    control: (provided) => ({
-      ...provided,
-      borderColor: "#C4C7D2",
-      borderRadius: "15px",
-      boxShadow: "none",
-      "&:hover": { borderColor: "none" }
-    }),
-    multiValue: (provided) => ({
-      ...provided,
-      backgroundColor: "#E5E7EB",
-      borderRadius: "8px",
-    }),
-    placeholder: (provided) => ({
-      ...provided,
-      color: "#6B7280"
-    }),
-    multiValueRemove: (provided) => ({
-      ...provided,
-      borderRadius: "8px",
-      cursor: "pointer",
-      padding: "2px",
-      "&:hover": {
-        backgroundColor: "#E8A7AF",
-        color: "#111827"
-      }
-    }),
-    option: (provided, state) => ({
-      ...provided,
-      backgroundColor: state.isSelected
-        ? "#800020"
-        : state.isFocused
-        ? "#E8A7AF"
-        : "white",
-      color: state.isSelected ? "white" : "#111827",
-      cursor: "pointer",
-    }),
-  };
-
   return (
     <div className="p-6 space-y-8">
 
@@ -264,10 +226,7 @@ const CinemaDetails = () => {
 
             <Select
               className="mt-3"
-              options={cinemas.map(c => ({
-                value: c._id,
-                label: c.name
-              }))}
+              options={cinemaOptions}
               value={{ value: cinema._id, label: cinema.name }}
               onChange={handleCinemaChange}
               styles={customSelectStyles}
@@ -298,7 +257,7 @@ const CinemaDetails = () => {
 
           <Select
             isMulti
-            options={allGenres.map(g => ({ value: g, label: g }))}
+            options={genreOptions}
             value={genres}
             onChange={setGenres}
             placeholder="Жанри"
@@ -313,7 +272,7 @@ const CinemaDetails = () => {
           />
 
           <Select
-            options={allAgeRatings.map(a => ({ value: a, label: a }))}
+            options={ageOptions}
             value={age}
             onChange={setAge}
             placeholder="Вікове обмеження"
@@ -323,11 +282,7 @@ const CinemaDetails = () => {
 
           <Select
             isMulti
-            options={[
-              { value: "2D", label: "2D" },
-              { value: "3D", label: "3D" },
-              { value: "RealD", label: "RealD" },
-            ]}
+            options={formatOptions}
             value={formats}
             onChange={setFormats}
             placeholder="Формат"

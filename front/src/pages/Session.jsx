@@ -7,7 +7,7 @@ import { Check } from "lucide-react";
 
 const Session = () => {
   const { id } = useParams();
-  const { backendUrl, token, cartItems, addToCart, deleteFromCart } = useContext(AppContext);
+  const { backendUrl, token, cartItems, addToCart, deleteFromCart, formatDate } = useContext(AppContext);
 
   const [session, setSession] = useState(null);
   const [room, setRoom] = useState(null);
@@ -15,20 +15,19 @@ const Session = () => {
   const [film, setFilm] = useState(null);
   const [cinema, setCinema] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const sessionRes = await axios.post(
-          backendUrl + "/api/session/get",
-          { sessionId: id }
-        );
 
-        if (!sessionRes.data.success) return;
+  const fetchData = async () => {
+    try {
+      const sessionRes = await axios.post(
+        backendUrl + "/api/session/get",
+        { sessionId: id }
+      );
 
-        const sessionData = sessionRes.data.session;
-        setSession(sessionData);
-
-        const roomRes = await axios.post(
+      if (!sessionRes.data.success) return;
+      const sessionData = sessionRes.data.session;
+      setSession(sessionData);
+      
+      const roomRes = await axios.post(
           backendUrl + "/api/room/get",
           { roomId: sessionData.room_id }
         );
@@ -37,47 +36,26 @@ const Session = () => {
           setRoom(roomRes.data.room);
         }
 
-        const listRes = await axios.post(
-          backendUrl + "/api/sessionList/get",
-          { sessionListId: sessionData.list_id }
-        );
+      const listRes = await axios.post(
+        backendUrl + "/api/sessionList/get",
+        { sessionListId: sessionData.list_id }
+      );
 
-        if (!listRes.data.success) return;
+      if (!listRes.data.success) return;
+      const listData = listRes.data.list;
+      setSessionList(listData);
+      setFilm(listData.film_id);
+      setCinema(listData.cinema_id);
 
-        const listData = listRes.data.list;
-        setSessionList(listData);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-        const filmId =
-          listData.film_id?._id || listData.film_id;
 
-        const filmRes = await axios.post(
-          backendUrl + "/api/film/single",
-          { filmId }
-        );
-
-        if (filmRes.data.success) {
-          setFilm(filmRes.data.film);
-        }
-
-        const cinemaId =
-          listData.cinema_id?._id || listData.cinema_id;
-
-        const cinemaRes = await axios.post(
-          backendUrl + "/api/cinema/single",
-          { cinemaId }
-        );
-
-        if (cinemaRes.data.success) {
-          setCinema(cinemaRes.data.cinema);
-        }
-
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
+  useEffect(() => {
     fetchData();
-  }, [id, backendUrl]);
+  }, []);
 
   const priceColorMap = useMemo(() => {
     if (!session?.seats) return {};
@@ -150,20 +128,6 @@ const Session = () => {
     maxSeats * seatSize + (maxSeats - 1) * gap;
 
   const totalWidth = rowWidth + 60;
-
-  const formatDate = (dateStr) => {
-    const date = new Date(dateStr);
-
-    const days = ["Нд", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"];
-    const months = [
-      "січня","лютого","березня","квітня","травня","червня",
-      "липня","серпня","вересня","жовтня","листопада","грудня"
-    ];
-
-    return `${date.getDate()} ${
-      months[date.getMonth()]
-    }, ${days[date.getDay()]}`;
-  };
 
   return (
     <div className="flex flex-col lg:flex-row gap-10 p-6">

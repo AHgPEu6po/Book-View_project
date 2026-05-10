@@ -35,6 +35,7 @@ const History = () => {
             return {
               film: filmRes.data.film,
               sessionDate: item.sessionDate,
+              rating: item.rating
             };
           } catch (error) {
             console.log(error);
@@ -59,6 +60,40 @@ const History = () => {
       fetchHistory();
     }
   }, [token]);
+
+  const rateFilm = async ( filmId, sessionDate, rating ) => {
+    try {
+
+      const res = await axios.post(
+        backendUrl + "/api/user/history/rate",
+        { filmId, sessionDate, rating },
+        { headers: { token } }
+      );
+
+      if (res.data.success) {
+
+        setHistory((prev) =>
+          prev.map((item) => {
+
+            if (
+              item.film._id === filmId &&
+              item.sessionDate === sessionDate
+            ) {
+              return {
+                ...item,
+                rating,
+              };
+            }
+
+            return item;
+          })
+        );
+      }
+
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const formatDate = (dateStr) => {
     const date = new Date(dateStr);
@@ -125,12 +160,35 @@ const History = () => {
                   </div>
 
                   <div className="flex flex-wrap gap-2">
-
                     {item.film.category.map((genre) => (
                       <span key={genre} className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700">
                         {genre}
                       </span>
                     ))}
+                  </div>
+
+                  <div className="flex items-center gap-2 mt-4">
+                    <span className="font-medium">
+                      Ваша оцінка:
+                    </span>
+
+                    {item.rating ? (
+                      <div className="px-3 py-1 rounded-lg bg-green-100 text-green-700">
+                        {item.rating}/10
+                      </div>
+                    ) : (
+                      <div className="flex gap-2">
+                        {[1,2,3,4,5,6,7,8,9,10].map((num) => (
+                          <button key={num} onClick={() => rateFilm(
+                              item.film._id, item.sessionDate, num
+                            )}
+                            className="w-9 h-9 rounded-lg border hover:bg-black hover:text-white transition"
+                          >
+                            {num}
+                          </button>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

@@ -121,7 +121,6 @@ const getSessionData = async (req, res) => {
 const updateSeats = async (req, res) => {
   try {
     const { sessionId, seats } = req.body;
-    // seats = [{ row, number }]
 
     const session = await sessionModel.findById(sessionId);
 

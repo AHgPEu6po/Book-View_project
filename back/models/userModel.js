@@ -2,7 +2,8 @@ import mongoose from "mongoose";
 
 const historySchema = new mongoose.Schema({
     film_id: { type: mongoose.Schema.Types.ObjectId, ref: "film" },
-    sessionDate: { type: Date } 
+    sessionDate: { type: Date }, 
+    rating: { type: Number, default: null }
   }, { _id: false } );
 
 const userSchema = new mongoose.Schema({

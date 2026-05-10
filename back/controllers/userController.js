@@ -192,5 +192,39 @@ const getUserHistory = async (req, res) => {
     }
 }
 
+const rateFilm = async (req, res) => {
+  try {
 
-export { loginUser, registerUser, updateUser, getUserDate, adminLogin, getUserHistory }
+    const userId = req.user.id;
+    const { filmId, sessionDate, rating } = req.body;
+
+    if (rating < 1 || rating > 10) {
+      return res.json({ success: false, message: "Rating must be from 1 to 10" });
+    }
+
+    const user = await userModel.findById(userId);
+
+    const historyItem = user.history.find((item) =>
+        item.film_id.toString() === filmId && new Date(item.sessionDate).getTime() === new Date(sessionDate).getTime()
+    );
+
+    if (!historyItem) {
+      return res.json({ success: false, message: "History item not found" });
+    }
+
+    if (historyItem.rating !== null) {
+      return res.json({ success: false, message: "Rating already exists" });
+    }
+
+    historyItem.rating = rating;
+    await user.save();
+    res.json({ success: true, message: "Rating added" });
+
+  } catch (error) {
+    logger.error(error.message);
+    res.json({ success: false, message: error.message });
+  }
+};
+
+
+export { loginUser, registerUser, updateUser, getUserDate, adminLogin, getUserHistory, rateFilm }

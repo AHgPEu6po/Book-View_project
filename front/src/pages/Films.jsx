@@ -6,7 +6,7 @@ import EventCard from "../components/EventCard";
 import { assets, allGenres, allAgeRatings } from "../assets/assets";
 
 const Films = () => {
-  const { backendUrl } = useContext(AppContext);
+  const { backendUrl, customSelectStyles } = useContext(AppContext);
 
   const [films, setFilms] = useState([]);
   const [cinemas, setCinemas] = useState([]);
@@ -51,6 +51,33 @@ const Films = () => {
     fetchSessionLists();
   }, []);
 
+  const genreOptions = useMemo(
+      () =>
+        allGenres.map((g) => ({
+          value: g,
+          label: g,
+        })),
+      []
+    );
+  
+    const ageOptions = useMemo(
+      () =>
+        allAgeRatings.map((a) => ({
+          value: a,
+          label: a,
+        })),
+      []
+    );
+  
+    const cinemaOptions = useMemo(
+      () =>
+        cinemas.map((c) => ({
+          value: c._id,
+          label: c.name,
+        })),
+      [cinemas]
+    );
+
   const filteredFilms = useMemo(() => {
     return films.filter((film) => {
       const matchesSearch = film.name
@@ -85,54 +112,9 @@ const Films = () => {
         ? film.isPremiere
         : true;
 
-      return (
-        matchesSearch &&
-        matchesCinema &&
-        matchesAge &&
-        matchesGenres &&
-        matchesPremiere
-      );
+      return ( matchesSearch && matchesCinema && matchesAge && matchesGenres && matchesPremiere );
     });
   }, [films, search, selectedCinemas, age, genres, onlyPremiere]);
-
-  const customSelectStyles = {
-    control: (provided) => ({
-      ...provided,
-      borderColor: "#C4C7D2",
-      borderRadius: "15px",
-      boxShadow: "none",
-      "&:hover": { borderColor: "none" }
-    }),
-    multiValue: (provided) => ({
-      ...provided,
-      backgroundColor: "#E5E7EB",
-      borderRadius: "8px",
-    }),
-    placeholder: (provided) => ({
-      ...provided,
-      color: "#6B7280"
-    }),
-    multiValueRemove: (provided) => ({
-      ...provided,
-      borderRadius: "8px",
-      cursor: "pointer",
-      padding: "2px",
-      "&:hover": {
-        backgroundColor: "#E8A7AF",
-        color: "#111827"
-      }
-    }),
-    option: (provided, state) => ({
-      ...provided,
-      backgroundColor: state.isSelected
-        ? "#800020"
-        : state.isFocused
-        ? "#E8A7AF"
-        : "white",
-      color: state.isSelected ? "white" : "#111827",
-      cursor: "pointer",
-    }),
-  };
 
   return (
     <div className="flex flex-col lg:flex-row gap-8 p-6">
@@ -152,7 +134,7 @@ const Films = () => {
 
         <Select
           isMulti
-          options={cinemas.map((c => ({ value: c._id, label: c.name })))}
+          options={cinemaOptions}
           value={selectedCinemas}
           onChange={setSelectedCinemas}
           placeholder="Кінотеатр"
@@ -161,7 +143,7 @@ const Films = () => {
 
         <Select
           isMulti
-          options={allGenres.map(g => ({ value: g, label: g }))}
+          options={genreOptions}
           value={genres}
           onChange={setGenres}
           placeholder="Жанри"
@@ -169,7 +151,7 @@ const Films = () => {
         />
 
         <Select
-          options={allAgeRatings.map(a => ({ value: a, label: a }))}
+          options={ageOptions}
           value={age}
           onChange={setAge}
           placeholder="Вікове обмеження"

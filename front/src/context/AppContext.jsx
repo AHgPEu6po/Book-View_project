@@ -261,11 +261,68 @@ const AppContextProvider = (props) => {
         }
     }, []);
 
+    const formatDate = (dateStr) => {
+        const date = new Date(dateStr);
+
+        const days = ["Нд", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"];
+        const months = [
+            "січня","лютого","березня","квітня","травня","червня",
+            "липня","серпня","вересня","жовтня","листопада","грудня"
+        ];
+
+        return `${date.getDate()} ${
+            months[date.getMonth()]
+        }, ${days[date.getDay()]}`
+    };
+
+    const customSelectStyles = {
+        control: (provided) => ({
+            ...provided,
+            borderColor: "#C4C7D2",
+            borderRadius: "15px",
+            boxShadow: "none",
+            "&:hover": { borderColor: "none" }
+        }),
+
+        multiValue: (provided) => ({
+            ...provided,
+            backgroundColor: "#E5E7EB",
+            borderRadius: "8px",
+        }),
+
+        placeholder: (provided) => ({
+            ...provided,
+            color: "#6B7280"
+        }),
+
+        multiValueRemove: (provided) => ({
+            ...provided,
+            borderRadius: "8px",
+            cursor: "pointer",
+            padding: "2px",
+            "&:hover": {
+                backgroundColor: "#E8A7AF",
+                color: "#111827"
+            }
+        }),
+
+        option: (provided, state) => ({
+            ...provided,
+            backgroundColor: state.isSelected
+                ? "#800020"
+                : state.isFocused
+                ? "#E8A7AF"
+                : "white",
+            color: state.isSelected ? "white" : "#111827",
+            cursor: "pointer",
+        }),
+    };
+
     const value = {
         backendUrl, navigate, token, setToken, userData, setUserData,
         showLogin, setShowLogin, login, register, logout, getUserData,
         cartItems, setCartItems, addToCart, deleteFromCart, getUserCart,
-        getCartAmount,
+        getCartAmount, customSelectStyles, formatDate
     };
 
     return (
