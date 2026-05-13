@@ -10,6 +10,7 @@ import roomRouter from "./routes/roomRoute.js"
 import sessionListRouter from "./routes/sessionListRoute.js"
 import sessionRouter from "./routes/sessionRoute.js"
 import userRouter from "./routes/userRoute.js"
+import recommendationRoute from "./routes/recommendationRoute.js"
 
 const app = express()
 
@@ -24,6 +25,7 @@ app.use('/api/cinema', cinemaRouter)
 app.use('/api/room', roomRouter)
 app.use('/api/sessionList', sessionListRouter)
 app.use('/api/session', sessionRouter)
+app.use('/api/recommendation', recommendationRoute)
 
 app.get('/health', async (req, res) => {
   try {
