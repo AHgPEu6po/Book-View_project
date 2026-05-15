@@ -58,8 +58,6 @@ const getRecommendations = async ( userId ) => {
     recommendations.push({ film, cinema, score });
   }
 
-  console.log(recommendations);
-
   recommendations.sort(
     (a, b) => b.score - a.score
   );

@@ -1,0 +1,802 @@
+[
+  {
+    "user_id": "6a070be042153631c229e8fe",
+    "ratingCoverage": 25
+  },
+  {
+    "user_id": "6a070be042153631c229e8ff",
+    "ratingCoverage": 45
+  },
+  {
+    "user_id": "6a070be042153631c229e900",
+    "ratingCoverage": 0
+  },
+  {
+    "user_id": "6a070be042153631c229e901",
+    "ratingCoverage": 25
+  },
+  {
+    "user_id": "6a070be042153631c229e902",
+    "ratingCoverage": 5
+  },
+  {
+    "user_id": "6a070be042153631c229e903",
+    "ratingCoverage": 10
+  },
+  {
+    "user_id": "6a070be042153631c229e904",
+    "ratingCoverage": 80
+  },
+  {
+    "user_id": "6a070be042153631c229e905",
+    "ratingCoverage": 90
+  },
+  {
+    "user_id": "6a070be042153631c229e906",
+    "ratingCoverage": 65
+  },
+  {
+    "user_id": "6a070be042153631c229e907",
+    "ratingCoverage": 0
+  },
+  {
+    "user_id": "6a070be042153631c229e908",
+    "ratingCoverage": 60
+  },
+  {
+    "user_id": "6a070be042153631c229e909",
+    "ratingCoverage": 65
+  },
+  {
+    "user_id": "6a070be042153631c229e90a",
+    "ratingCoverage": 75
+  },
+  {
+    "user_id": "6a070be042153631c229e90b",
+    "ratingCoverage": 85
+  },
+  {
+    "user_id": "6a070be042153631c229e90c",
+    "ratingCoverage": 60
+  },
+  {
+    "user_id": "6a070be042153631c229e90d",
+    "ratingCoverage": 15
+  },
+  {
+    "user_id": "6a070be042153631c229e90e",
+    "ratingCoverage": 5
+  },
+  {
+    "user_id": "6a070be042153631c229e90f",
+    "ratingCoverage": 70
+  },
+  {
+    "user_id": "6a070be042153631c229e910",
+    "ratingCoverage": 40
+  },
+  {
+    "user_id": "6a070be042153631c229e911",
+    "ratingCoverage": 60
+  },
+  {
+    "user_id": "6a070be042153631c229e912",
+    "ratingCoverage": 15
+  },
+  {
+    "user_id": "6a070be042153631c229e913",
+    "ratingCoverage": 45
+  },
+  {
+    "user_id": "6a070be042153631c229e914",
+    "ratingCoverage": 0
+  },
+  {
+    "user_id": "6a070be042153631c229e915",
+    "ratingCoverage": 55
+  },
+  {
+    "user_id": "6a070be042153631c229e916",
+    "ratingCoverage": 60
+  },
+  {
+    "user_id": "6a070be042153631c229e917",
+    "ratingCoverage": 60
+  },
+  {
+    "user_id": "6a070be042153631c229e918",
+    "ratingCoverage": 50
+  },
+  {
+    "user_id": "6a070be042153631c229e919",
+    "ratingCoverage": 50
+  },
+  {
+    "user_id": "6a070be042153631c229e91a",
+    "ratingCoverage": 70
+  },
+  {
+    "user_id": "6a070be042153631c229e91b",
+    "ratingCoverage": 5
+  },
+  {
+    "user_id": "6a070be042153631c229e91c",
+    "ratingCoverage": 30
+  },
+  {
+    "user_id": "6a070be042153631c229e91d",
+    "ratingCoverage": 85
+  },
+  {
+    "user_id": "6a070be042153631c229e91e",
+    "ratingCoverage": 45
+  },
+  {
+    "user_id": "6a070be042153631c229e91f",
+    "ratingCoverage": 20
+  },
+  {
+    "user_id": "6a070be042153631c229e920",
+    "ratingCoverage": 5
+  },
+  {
+    "user_id": "6a070be042153631c229e921",
+    "ratingCoverage": 45
+  },
+  {
+    "user_id": "6a070be042153631c229e922",
+    "ratingCoverage": 60
+  },
+  {
+    "user_id": "6a070be042153631c229e923",
+    "ratingCoverage": 10
+  },
+  {
+    "user_id": "6a070be042153631c229e924",
+    "ratingCoverage": 100
+  },
+  {
+    "user_id": "6a070be042153631c229e925",
+    "ratingCoverage": 75
+  },
+  {
+    "user_id": "6a070be042153631c229e926",
+    "ratingCoverage": 5
+  },
+  {
+    "user_id": "6a070be042153631c229e927",
+    "ratingCoverage": 25
+  },
+  {
+    "user_id": "6a070be042153631c229e928",
+    "ratingCoverage": 50
+  },
+  {
+    "user_id": "6a070be042153631c229e929",
+    "ratingCoverage": 75
+  },
+  {
+    "user_id": "6a070be042153631c229e92a",
+    "ratingCoverage": 95
+  },
+  {
+    "user_id": "6a070be042153631c229e92b",
+    "ratingCoverage": 50
+  },
+  {
+    "user_id": "6a070be042153631c229e92c",
+    "ratingCoverage": 20
+  },
+  {
+    "user_id": "6a070be042153631c229e92d",
+    "ratingCoverage": 10
+  },
+  {
+    "user_id": "6a070be042153631c229e92e",
+    "ratingCoverage": 80
+  },
+  {
+    "user_id": "6a070be042153631c229e92f",
+    "ratingCoverage": 0
+  },
+  {
+    "user_id": "6a070be042153631c229e930",
+    "ratingCoverage": 95
+  },
+  {
+    "user_id": "6a070be042153631c229e931",
+    "ratingCoverage": 95
+  },
+  {
+    "user_id": "6a070be042153631c229e932",
+    "ratingCoverage": 95
+  },
+  {
+    "user_id": "6a070be042153631c229e933",
+    "ratingCoverage": 45
+  },
+  {
+    "user_id": "6a070be042153631c229e934",
+    "ratingCoverage": 90
+  },
+  {
+    "user_id": "6a070be042153631c229e935",
+    "ratingCoverage": 55
+  },
+  {
+    "user_id": "6a070be042153631c229e936",
+    "ratingCoverage": 45
+  },
+  {
+    "user_id": "6a070be042153631c229e937",
+    "ratingCoverage": 30
+  },
+  {
+    "user_id": "6a070be042153631c229e938",
+    "ratingCoverage": 95
+  },
+  {
+    "user_id": "6a070be042153631c229e939",
+    "ratingCoverage": 85
+  },
+  {
+    "user_id": "6a070be042153631c229e93a",
+    "ratingCoverage": 0
+  },
+  {
+    "user_id": "6a070be042153631c229e93b",
+    "ratingCoverage": 20
+  },
+  {
+    "user_id": "6a070be042153631c229e93c",
+    "ratingCoverage": 50
+  },
+  {
+    "user_id": "6a070be042153631c229e93d",
+    "ratingCoverage": 55
+  },
+  {
+    "user_id": "6a070be042153631c229e93e",
+    "ratingCoverage": 25
+  },
+  {
+    "user_id": "6a070be042153631c229e93f",
+    "ratingCoverage": 60
+  },
+  {
+    "user_id": "6a070be042153631c229e940",
+    "ratingCoverage": 75
+  },
+  {
+    "user_id": "6a070be042153631c229e941",
+    "ratingCoverage": 5
+  },
+  {
+    "user_id": "6a070be042153631c229e942",
+    "ratingCoverage": 95
+  },
+  {
+    "user_id": "6a070be042153631c229e943",
+    "ratingCoverage": 90
+  },
+  {
+    "user_id": "6a070be042153631c229e944",
+    "ratingCoverage": 25
+  },
+  {
+    "user_id": "6a070be042153631c229e945",
+    "ratingCoverage": 65
+  },
+  {
+    "user_id": "6a070be042153631c229e946",
+    "ratingCoverage": 40
+  },
+  {
+    "user_id": "6a070be042153631c229e947",
+    "ratingCoverage": 70
+  },
+  {
+    "user_id": "6a070be042153631c229e948",
+    "ratingCoverage": 95
+  },
+  {
+    "user_id": "6a070be042153631c229e949",
+    "ratingCoverage": 5
+  },
+  {
+    "user_id": "6a070be042153631c229e94a",
+    "ratingCoverage": 40
+  },
+  {
+    "user_id": "6a070be042153631c229e94b",
+    "ratingCoverage": 85
+  },
+  {
+    "user_id": "6a070be042153631c229e94c",
+    "ratingCoverage": 15
+  },
+  {
+    "user_id": "6a070be042153631c229e94d",
+    "ratingCoverage": 50
+  },
+  {
+    "user_id": "6a070be042153631c229e94e",
+    "ratingCoverage": 35
+  },
+  {
+    "user_id": "6a070be042153631c229e94f",
+    "ratingCoverage": 55
+  },
+  {
+    "user_id": "6a070be042153631c229e950",
+    "ratingCoverage": 60
+  },
+  {
+    "user_id": "6a070be042153631c229e951",
+    "ratingCoverage": 95
+  },
+  {
+    "user_id": "6a070be042153631c229e952",
+    "ratingCoverage": 55
+  },
+  {
+    "user_id": "6a070be042153631c229e953",
+    "ratingCoverage": 85
+  },
+  {
+    "user_id": "6a070be042153631c229e954",
+    "ratingCoverage": 55
+  },
+  {
+    "user_id": "6a070be042153631c229e955",
+    "ratingCoverage": 30
+  },
+  {
+    "user_id": "6a070be042153631c229e956",
+    "ratingCoverage": 80
+  },
+  {
+    "user_id": "6a070be042153631c229e957",
+    "ratingCoverage": 90
+  },
+  {
+    "user_id": "6a070be042153631c229e958",
+    "ratingCoverage": 10
+  },
+  {
+    "user_id": "6a070be042153631c229e959",
+    "ratingCoverage": 45
+  },
+  {
+    "user_id": "6a070be042153631c229e95a",
+    "ratingCoverage": 45
+  },
+  {
+    "user_id": "6a070be042153631c229e95b",
+    "ratingCoverage": 25
+  },
+  {
+    "user_id": "6a070be042153631c229e95c",
+    "ratingCoverage": 30
+  },
+  {
+    "user_id": "6a070be042153631c229e95d",
+    "ratingCoverage": 50
+  },
+  {
+    "user_id": "6a070be042153631c229e95e",
+    "ratingCoverage": 15
+  },
+  {
+    "user_id": "6a070be042153631c229e95f",
+    "ratingCoverage": 50
+  },
+  {
+    "user_id": "6a070be042153631c229e960",
+    "ratingCoverage": 65
+  },
+  {
+    "user_id": "6a070be042153631c229e961",
+    "ratingCoverage": 5
+  },
+  {
+    "user_id": "6a070be042153631c229e962",
+    "ratingCoverage": 75
+  },
+  {
+    "user_id": "6a070be042153631c229e963",
+    "ratingCoverage": 25
+  },
+  {
+    "user_id": "6a070be042153631c229e964",
+    "ratingCoverage": 5
+  },
+  {
+    "user_id": "6a070be042153631c229e965",
+    "ratingCoverage": 20
+  },
+  {
+    "user_id": "6a070be042153631c229e966",
+    "ratingCoverage": 80
+  },
+  {
+    "user_id": "6a070be042153631c229e967",
+    "ratingCoverage": 45
+  },
+  {
+    "user_id": "6a070be042153631c229e968",
+    "ratingCoverage": 75
+  },
+  {
+    "user_id": "6a070be042153631c229e969",
+    "ratingCoverage": 25
+  },
+  {
+    "user_id": "6a070be042153631c229e96a",
+    "ratingCoverage": 35
+  },
+  {
+    "user_id": "6a070be042153631c229e96b",
+    "ratingCoverage": 65
+  },
+  {
+    "user_id": "6a070be042153631c229e96c",
+    "ratingCoverage": 5
+  },
+  {
+    "user_id": "6a070be042153631c229e96d",
+    "ratingCoverage": 15
+  },
+  {
+    "user_id": "6a070be042153631c229e96e",
+    "ratingCoverage": 0
+  },
+  {
+    "user_id": "6a070be042153631c229e96f",
+    "ratingCoverage": 60
+  },
+  {
+    "user_id": "6a070be042153631c229e970",
+    "ratingCoverage": 90
+  },
+  {
+    "user_id": "6a070be042153631c229e971",
+    "ratingCoverage": 45
+  },
+  {
+    "user_id": "6a070be042153631c229e972",
+    "ratingCoverage": 45
+  },
+  {
+    "user_id": "6a070be042153631c229e973",
+    "ratingCoverage": 0
+  },
+  {
+    "user_id": "6a070be042153631c229e974",
+    "ratingCoverage": 95
+  },
+  {
+    "user_id": "6a070be042153631c229e975",
+    "ratingCoverage": 50
+  },
+  {
+    "user_id": "6a070be042153631c229e976",
+    "ratingCoverage": 0
+  },
+  {
+    "user_id": "6a070be042153631c229e977",
+    "ratingCoverage": 15
+  },
+  {
+    "user_id": "6a070be042153631c229e978",
+    "ratingCoverage": 55
+  },
+  {
+    "user_id": "6a070be042153631c229e979",
+    "ratingCoverage": 5
+  },
+  {
+    "user_id": "6a070be042153631c229e97a",
+    "ratingCoverage": 85
+  },
+  {
+    "user_id": "6a070be042153631c229e97b",
+    "ratingCoverage": 35
+  },
+  {
+    "user_id": "6a070be042153631c229e97c",
+    "ratingCoverage": 0
+  },
+  {
+    "user_id": "6a070be042153631c229e97d",
+    "ratingCoverage": 60
+  },
+  {
+    "user_id": "6a070be042153631c229e97e",
+    "ratingCoverage": 70
+  },
+  {
+    "user_id": "6a070be042153631c229e97f",
+    "ratingCoverage": 15
+  },
+  {
+    "user_id": "6a070be042153631c229e980",
+    "ratingCoverage": 95
+  },
+  {
+    "user_id": "6a070be042153631c229e981",
+    "ratingCoverage": 100
+  },
+  {
+    "user_id": "6a070be042153631c229e982",
+    "ratingCoverage": 60
+  },
+  {
+    "user_id": "6a070be042153631c229e983",
+    "ratingCoverage": 0
+  },
+  {
+    "user_id": "6a070be042153631c229e984",
+    "ratingCoverage": 65
+  },
+  {
+    "user_id": "6a070be042153631c229e985",
+    "ratingCoverage": 10
+  },
+  {
+    "user_id": "6a070be042153631c229e986",
+    "ratingCoverage": 10
+  },
+  {
+    "user_id": "6a070be042153631c229e987",
+    "ratingCoverage": 15
+  },
+  {
+    "user_id": "6a070be042153631c229e988",
+    "ratingCoverage": 0
+  },
+  {
+    "user_id": "6a070be042153631c229e989",
+    "ratingCoverage": 75
+  },
+  {
+    "user_id": "6a070be042153631c229e98a",
+    "ratingCoverage": 55
+  },
+  {
+    "user_id": "6a070be042153631c229e98b",
+    "ratingCoverage": 85
+  },
+  {
+    "user_id": "6a070be042153631c229e98c",
+    "ratingCoverage": 5
+  },
+  {
+    "user_id": "6a070be042153631c229e98d",
+    "ratingCoverage": 35
+  },
+  {
+    "user_id": "6a070be042153631c229e98e",
+    "ratingCoverage": 100
+  },
+  {
+    "user_id": "6a070be042153631c229e98f",
+    "ratingCoverage": 40
+  },
+  {
+    "user_id": "6a070be042153631c229e990",
+    "ratingCoverage": 55
+  },
+  {
+    "user_id": "6a070be042153631c229e991",
+    "ratingCoverage": 65
+  },
+  {
+    "user_id": "6a070be042153631c229e992",
+    "ratingCoverage": 30
+  },
+  {
+    "user_id": "6a070be042153631c229e993",
+    "ratingCoverage": 65
+  },
+  {
+    "user_id": "6a070be042153631c229e994",
+    "ratingCoverage": 85
+  },
+  {
+    "user_id": "6a070be042153631c229e995",
+    "ratingCoverage": 80
+  },
+  {
+    "user_id": "6a070be042153631c229e996",
+    "ratingCoverage": 10
+  },
+  {
+    "user_id": "6a070be042153631c229e997",
+    "ratingCoverage": 5
+  },
+  {
+    "user_id": "6a070be042153631c229e998",
+    "ratingCoverage": 20
+  },
+  {
+    "user_id": "6a070be042153631c229e999",
+    "ratingCoverage": 20
+  },
+  {
+    "user_id": "6a070be042153631c229e99a",
+    "ratingCoverage": 30
+  },
+  {
+    "user_id": "6a070be042153631c229e99b",
+    "ratingCoverage": 5
+  },
+  {
+    "user_id": "6a070be042153631c229e99c",
+    "ratingCoverage": 45
+  },
+  {
+    "user_id": "6a070be042153631c229e99d",
+    "ratingCoverage": 40
+  },
+  {
+    "user_id": "6a070be042153631c229e99e",
+    "ratingCoverage": 80
+  },
+  {
+    "user_id": "6a070be042153631c229e99f",
+    "ratingCoverage": 75
+  },
+  {
+    "user_id": "6a070be042153631c229e9a0",
+    "ratingCoverage": 65
+  },
+  {
+    "user_id": "6a070be042153631c229e9a1",
+    "ratingCoverage": 80
+  },
+  {
+    "user_id": "6a070be042153631c229e9a2",
+    "ratingCoverage": 100
+  },
+  {
+    "user_id": "6a070be042153631c229e9a3",
+    "ratingCoverage": 40
+  },
+  {
+    "user_id": "6a070be042153631c229e9a4",
+    "ratingCoverage": 95
+  },
+  {
+    "user_id": "6a070be042153631c229e9a5",
+    "ratingCoverage": 75
+  },
+  {
+    "user_id": "6a070be042153631c229e9a6",
+    "ratingCoverage": 75
+  },
+  {
+    "user_id": "6a070be042153631c229e9a7",
+    "ratingCoverage": 35
+  },
+  {
+    "user_id": "6a070be042153631c229e9a8",
+    "ratingCoverage": 20
+  },
+  {
+    "user_id": "6a070be042153631c229e9a9",
+    "ratingCoverage": 20
+  },
+  {
+    "user_id": "6a070be042153631c229e9aa",
+    "ratingCoverage": 20
+  },
+  {
+    "user_id": "6a070be042153631c229e9ab",
+    "ratingCoverage": 60
+  },
+  {
+    "user_id": "6a070be042153631c229e9ac",
+    "ratingCoverage": 25
+  },
+  {
+    "user_id": "6a070be042153631c229e9ad",
+    "ratingCoverage": 35
+  },
+  {
+    "user_id": "6a070be042153631c229e9ae",
+    "ratingCoverage": 20
+  },
+  {
+    "user_id": "6a070be042153631c229e9af",
+    "ratingCoverage": 100
+  },
+  {
+    "user_id": "6a070be042153631c229e9b0",
+    "ratingCoverage": 90
+  },
+  {
+    "user_id": "6a070be042153631c229e9b1",
+    "ratingCoverage": 80
+  },
+  {
+    "user_id": "6a070be042153631c229e9b2",
+    "ratingCoverage": 0
+  },
+  {
+    "user_id": "6a070be042153631c229e9b3",
+    "ratingCoverage": 60
+  },
+  {
+    "user_id": "6a070be042153631c229e9b4",
+    "ratingCoverage": 60
+  },
+  {
+    "user_id": "6a070be042153631c229e9b5",
+    "ratingCoverage": 80
+  },
+  {
+    "user_id": "6a070be042153631c229e9b6",
+    "ratingCoverage": 45
+  },
+  {
+    "user_id": "6a070be042153631c229e9b7",
+    "ratingCoverage": 45
+  },
+  {
+    "user_id": "6a070be042153631c229e9b8",
+    "ratingCoverage": 5
+  },
+  {
+    "user_id": "6a070be042153631c229e9b9",
+    "ratingCoverage": 70
+  },
+  {
+    "user_id": "6a070be042153631c229e9ba",
+    "ratingCoverage": 25
+  },
+  {
+    "user_id": "6a070be042153631c229e9bb",
+    "ratingCoverage": 15
+  },
+  {
+    "user_id": "6a070be042153631c229e9bc",
+    "ratingCoverage": 0
+  },
+  {
+    "user_id": "6a070be042153631c229e9bd",
+    "ratingCoverage": 45
+  },
+  {
+    "user_id": "6a070be042153631c229e9be",
+    "ratingCoverage": 100
+  },
+  {
+    "user_id": "6a070be042153631c229e9bf",
+    "ratingCoverage": 50
+  },
+  {
+    "user_id": "6a070be042153631c229e9c0",
+    "ratingCoverage": 15
+  },
+  {
+    "user_id": "6a070be042153631c229e9c1",
+    "ratingCoverage": 90
+  },
+  {
+    "user_id": "6a070be042153631c229e9c2",
+    "ratingCoverage": 40
+  },
+  {
+    "user_id": "6a070be042153631c229e9c3",
+    "ratingCoverage": 65
+  },
+  {
+    "user_id": "6a070be042153631c229e9c4",
+    "ratingCoverage": 15
+  },
+  {
+    "user_id": "6a070be042153631c229e9c5",
+    "ratingCoverage": 35
+  }
+]

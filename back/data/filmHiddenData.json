@@ -1,0 +1,2502 @@
+[
+  {
+    "film_id": "6a06f00176b111093d6389aa",
+    "popularity": 30,
+    "rating": 9.2
+  },
+  {
+    "film_id": "6a06f00176b111093d6389ab",
+    "popularity": 49,
+    "rating": 4.1
+  },
+  {
+    "film_id": "6a06f00176b111093d6389ac",
+    "popularity": 57,
+    "rating": 9
+  },
+  {
+    "film_id": "6a06f00176b111093d6389ad",
+    "popularity": 24,
+    "rating": 8.9
+  },
+  {
+    "film_id": "6a06f00176b111093d6389ae",
+    "popularity": 48,
+    "rating": 4.5
+  },
+  {
+    "film_id": "6a06f00176b111093d6389af",
+    "popularity": 30,
+    "rating": 5.4
+  },
+  {
+    "film_id": "6a06f00176b111093d6389b0",
+    "popularity": 57,
+    "rating": 8.1
+  },
+  {
+    "film_id": "6a06f00176b111093d6389b1",
+    "popularity": 78,
+    "rating": 9
+  },
+  {
+    "film_id": "6a06f00176b111093d6389b2",
+    "popularity": 29,
+    "rating": 7.7
+  },
+  {
+    "film_id": "6a06f00176b111093d6389b3",
+    "popularity": 67,
+    "rating": 4.1
+  },
+  {
+    "film_id": "6a06f00176b111093d6389b4",
+    "popularity": 37,
+    "rating": 9.9
+  },
+  {
+    "film_id": "6a06f00176b111093d6389b5",
+    "popularity": 55,
+    "rating": 7.4
+  },
+  {
+    "film_id": "6a06f00176b111093d6389b6",
+    "popularity": 49,
+    "rating": 6.7
+  },
+  {
+    "film_id": "6a06f00176b111093d6389b7",
+    "popularity": 44,
+    "rating": 4.5
+  },
+  {
+    "film_id": "6a06f00176b111093d6389b8",
+    "popularity": 47,
+    "rating": 6.9
+  },
+  {
+    "film_id": "6a06f00176b111093d6389b9",
+    "popularity": 69,
+    "rating": 9.4
+  },
+  {
+    "film_id": "6a06f00176b111093d6389ba",
+    "popularity": 71,
+    "rating": 7.1
+  },
+  {
+    "film_id": "6a06f00176b111093d6389bb",
+    "popularity": 48,
+    "rating": 4.9
+  },
+  {
+    "film_id": "6a06f00176b111093d6389bc",
+    "popularity": 57,
+    "rating": 7.8
+  },
+  {
+    "film_id": "6a06f00176b111093d6389bd",
+    "popularity": 66,
+    "rating": 9.9
+  },
+  {
+    "film_id": "6a06f00176b111093d6389be",
+    "popularity": 60,
+    "rating": 9.9
+  },
+  {
+    "film_id": "6a06f00176b111093d6389bf",
+    "popularity": 69,
+    "rating": 9.9
+  },
+  {
+    "film_id": "6a06f00176b111093d6389c0",
+    "popularity": 54,
+    "rating": 5.6
+  },
+  {
+    "film_id": "6a06f00176b111093d6389c1",
+    "popularity": 50,
+    "rating": 9.6
+  },
+  {
+    "film_id": "6a06f00176b111093d6389c2",
+    "popularity": 53,
+    "rating": 4
+  },
+  {
+    "film_id": "6a06f00176b111093d6389c3",
+    "popularity": 76,
+    "rating": 6.6
+  },
+  {
+    "film_id": "6a06f00176b111093d6389c4",
+    "popularity": 43,
+    "rating": 6.8
+  },
+  {
+    "film_id": "6a06f00176b111093d6389c5",
+    "popularity": 65,
+    "rating": 8.3
+  },
+  {
+    "film_id": "6a06f00176b111093d6389c6",
+    "popularity": 42,
+    "rating": 4.2
+  },
+  {
+    "film_id": "6a06f00176b111093d6389c7",
+    "popularity": 63,
+    "rating": 7.9
+  },
+  {
+    "film_id": "6a06f00176b111093d6389c8",
+    "popularity": 55,
+    "rating": 6.3
+  },
+  {
+    "film_id": "6a06f00176b111093d6389c9",
+    "popularity": 45,
+    "rating": 9.5
+  },
+  {
+    "film_id": "6a06f00176b111093d6389ca",
+    "popularity": 22,
+    "rating": 6.1
+  },
+  {
+    "film_id": "6a06f00176b111093d6389cb",
+    "popularity": 58,
+    "rating": 7.8
+  },
+  {
+    "film_id": "6a06f00176b111093d6389cc",
+    "popularity": 46,
+    "rating": 4.3
+  },
+  {
+    "film_id": "6a06f00176b111093d6389cd",
+    "popularity": 26,
+    "rating": 9.8
+  },
+  {
+    "film_id": "6a06f00176b111093d6389ce",
+    "popularity": 56,
+    "rating": 8
+  },
+  {
+    "film_id": "6a06f00176b111093d6389cf",
+    "popularity": 26,
+    "rating": 6.7
+  },
+  {
+    "film_id": "6a06f00176b111093d6389d0",
+    "popularity": 36,
+    "rating": 4.7
+  },
+  {
+    "film_id": "6a06f00176b111093d6389d1",
+    "popularity": 78,
+    "rating": 8.4
+  },
+  {
+    "film_id": "6a06f00176b111093d6389d2",
+    "popularity": 33,
+    "rating": 5.6
+  },
+  {
+    "film_id": "6a06f00176b111093d6389d3",
+    "popularity": 75,
+    "rating": 3.6
+  },
+  {
+    "film_id": "6a06f00176b111093d6389d4",
+    "popularity": 34,
+    "rating": 4.4
+  },
+  {
+    "film_id": "6a06f00176b111093d6389d5",
+    "popularity": 63,
+    "rating": 9.6
+  },
+  {
+    "film_id": "6a06f00176b111093d6389d6",
+    "popularity": 74,
+    "rating": 5.4
+  },
+  {
+    "film_id": "6a06f00176b111093d6389d7",
+    "popularity": 40,
+    "rating": 9
+  },
+  {
+    "film_id": "6a06f00176b111093d6389d8",
+    "popularity": 58,
+    "rating": 6
+  },
+  {
+    "film_id": "6a06f00176b111093d6389d9",
+    "popularity": 50,
+    "rating": 8.5
+  },
+  {
+    "film_id": "6a06f00176b111093d6389da",
+    "popularity": 35,
+    "rating": 3.6
+  },
+  {
+    "film_id": "6a06f00176b111093d6389db",
+    "popularity": 69,
+    "rating": 3.9
+  },
+  {
+    "film_id": "6a06f00176b111093d6389dc",
+    "popularity": 38,
+    "rating": 9.8
+  },
+  {
+    "film_id": "6a06f00176b111093d6389dd",
+    "popularity": 65,
+    "rating": 7.6
+  },
+  {
+    "film_id": "6a06f00176b111093d6389de",
+    "popularity": 34,
+    "rating": 4.3
+  },
+  {
+    "film_id": "6a06f00176b111093d6389df",
+    "popularity": 22,
+    "rating": 9.1
+  },
+  {
+    "film_id": "6a06f00176b111093d6389e0",
+    "popularity": 46,
+    "rating": 9.7
+  },
+  {
+    "film_id": "6a06f00176b111093d6389e1",
+    "popularity": 55,
+    "rating": 3.9
+  },
+  {
+    "film_id": "6a06f00176b111093d6389e2",
+    "popularity": 30,
+    "rating": 8.4
+  },
+  {
+    "film_id": "6a06f00176b111093d6389e3",
+    "popularity": 41,
+    "rating": 3.5
+  },
+  {
+    "film_id": "6a06f00176b111093d6389e4",
+    "popularity": 54,
+    "rating": 5
+  },
+  {
+    "film_id": "6a06f00176b111093d6389e5",
+    "popularity": 35,
+    "rating": 9.8
+  },
+  {
+    "film_id": "6a06f00176b111093d6389e6",
+    "popularity": 23,
+    "rating": 9.4
+  },
+  {
+    "film_id": "6a06f00176b111093d6389e7",
+    "popularity": 50,
+    "rating": 5
+  },
+  {
+    "film_id": "6a06f00176b111093d6389e8",
+    "popularity": 80,
+    "rating": 8
+  },
+  {
+    "film_id": "6a06f00176b111093d6389e9",
+    "popularity": 74,
+    "rating": 7.3
+  },
+  {
+    "film_id": "6a06f00176b111093d6389ea",
+    "popularity": 56,
+    "rating": 3.5
+  },
+  {
+    "film_id": "6a06f00176b111093d6389eb",
+    "popularity": 46,
+    "rating": 4.1
+  },
+  {
+    "film_id": "6a06f00176b111093d6389ec",
+    "popularity": 22,
+    "rating": 6.5
+  },
+  {
+    "film_id": "6a06f00176b111093d6389ed",
+    "popularity": 75,
+    "rating": 5.5
+  },
+  {
+    "film_id": "6a06f00176b111093d6389ee",
+    "popularity": 49,
+    "rating": 9.5
+  },
+  {
+    "film_id": "6a06f00176b111093d6389ef",
+    "popularity": 23,
+    "rating": 10
+  },
+  {
+    "film_id": "6a06f00176b111093d6389f0",
+    "popularity": 70,
+    "rating": 6.5
+  },
+  {
+    "film_id": "6a06f00176b111093d6389f1",
+    "popularity": 27,
+    "rating": 6.2
+  },
+  {
+    "film_id": "6a06f00176b111093d6389f2",
+    "popularity": 74,
+    "rating": 5.5
+  },
+  {
+    "film_id": "6a06f00176b111093d6389f3",
+    "popularity": 46,
+    "rating": 7.9
+  },
+  {
+    "film_id": "6a06f00176b111093d6389f4",
+    "popularity": 31,
+    "rating": 4.7
+  },
+  {
+    "film_id": "6a06f00176b111093d6389f5",
+    "popularity": 65,
+    "rating": 5.2
+  },
+  {
+    "film_id": "6a06f00176b111093d6389f6",
+    "popularity": 23,
+    "rating": 6.4
+  },
+  {
+    "film_id": "6a06f00176b111093d6389f7",
+    "popularity": 27,
+    "rating": 7.5
+  },
+  {
+    "film_id": "6a06f00176b111093d6389f8",
+    "popularity": 63,
+    "rating": 8.5
+  },
+  {
+    "film_id": "6a06f00176b111093d6389f9",
+    "popularity": 38,
+    "rating": 5.1
+  },
+  {
+    "film_id": "6a06f00176b111093d6389fa",
+    "popularity": 68,
+    "rating": 9.9
+  },
+  {
+    "film_id": "6a06f00176b111093d6389fb",
+    "popularity": 24,
+    "rating": 7.5
+  },
+  {
+    "film_id": "6a06f00176b111093d6389fc",
+    "popularity": 68,
+    "rating": 9
+  },
+  {
+    "film_id": "6a06f00176b111093d6389fd",
+    "popularity": 80,
+    "rating": 9.5
+  },
+  {
+    "film_id": "6a06f00176b111093d6389fe",
+    "popularity": 47,
+    "rating": 3.6
+  },
+  {
+    "film_id": "6a06f00176b111093d6389ff",
+    "popularity": 28,
+    "rating": 7.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638a00",
+    "popularity": 80,
+    "rating": 4.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638a01",
+    "popularity": 71,
+    "rating": 8.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638a02",
+    "popularity": 58,
+    "rating": 4.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638a03",
+    "popularity": 22,
+    "rating": 9.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638a04",
+    "popularity": 37,
+    "rating": 6.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638a05",
+    "popularity": 49,
+    "rating": 8.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638a06",
+    "popularity": 28,
+    "rating": 3
+  },
+  {
+    "film_id": "6a06f00176b111093d638a07",
+    "popularity": 70,
+    "rating": 9.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638a08",
+    "popularity": 74,
+    "rating": 6.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638a09",
+    "popularity": 42,
+    "rating": 4.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638a0a",
+    "popularity": 23,
+    "rating": 8.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638a0b",
+    "popularity": 75,
+    "rating": 8.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638a0c",
+    "popularity": 56,
+    "rating": 6.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638a0d",
+    "popularity": 55,
+    "rating": 8.3
+  },
+  {
+    "film_id": "6a06f00176b111093d638a0e",
+    "popularity": 79,
+    "rating": 6
+  },
+  {
+    "film_id": "6a06f00176b111093d638a0f",
+    "popularity": 56,
+    "rating": 7.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638a10",
+    "popularity": 54,
+    "rating": 7.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638a11",
+    "popularity": 27,
+    "rating": 7.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638a12",
+    "popularity": 37,
+    "rating": 8.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638a13",
+    "popularity": 22,
+    "rating": 10
+  },
+  {
+    "film_id": "6a06f00176b111093d638a14",
+    "popularity": 74,
+    "rating": 9.3
+  },
+  {
+    "film_id": "6a06f00176b111093d638a15",
+    "popularity": 47,
+    "rating": 9.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638a16",
+    "popularity": 71,
+    "rating": 3.6
+  },
+  {
+    "film_id": "6a06f00176b111093d638a17",
+    "popularity": 60,
+    "rating": 3.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638a18",
+    "popularity": 69,
+    "rating": 8.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638a19",
+    "popularity": 59,
+    "rating": 9.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638a1a",
+    "popularity": 45,
+    "rating": 9.6
+  },
+  {
+    "film_id": "6a06f00176b111093d638a1b",
+    "popularity": 61,
+    "rating": 7.6
+  },
+  {
+    "film_id": "6a06f00176b111093d638a1c",
+    "popularity": 34,
+    "rating": 5.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638a1d",
+    "popularity": 57,
+    "rating": 4.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638a1e",
+    "popularity": 69,
+    "rating": 9.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638a1f",
+    "popularity": 36,
+    "rating": 7.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638a20",
+    "popularity": 71,
+    "rating": 7.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638a21",
+    "popularity": 50,
+    "rating": 9.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638a22",
+    "popularity": 78,
+    "rating": 4.6
+  },
+  {
+    "film_id": "6a06f00176b111093d638a23",
+    "popularity": 52,
+    "rating": 4.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638a24",
+    "popularity": 68,
+    "rating": 9.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638a25",
+    "popularity": 72,
+    "rating": 9.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638a26",
+    "popularity": 50,
+    "rating": 5.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638a27",
+    "popularity": 59,
+    "rating": 3.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638a28",
+    "popularity": 20,
+    "rating": 9.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638a29",
+    "popularity": 68,
+    "rating": 6.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638a2a",
+    "popularity": 48,
+    "rating": 4.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638a2b",
+    "popularity": 70,
+    "rating": 3.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638a2c",
+    "popularity": 63,
+    "rating": 9.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638a2d",
+    "popularity": 40,
+    "rating": 9.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638a2e",
+    "popularity": 64,
+    "rating": 7.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638a2f",
+    "popularity": 26,
+    "rating": 4.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638a30",
+    "popularity": 66,
+    "rating": 3.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638a31",
+    "popularity": 46,
+    "rating": 3.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638a32",
+    "popularity": 42,
+    "rating": 7.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638a33",
+    "popularity": 76,
+    "rating": 4.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638a34",
+    "popularity": 53,
+    "rating": 8.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638a35",
+    "popularity": 51,
+    "rating": 4.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638a36",
+    "popularity": 56,
+    "rating": 9.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638a37",
+    "popularity": 62,
+    "rating": 6.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638a38",
+    "popularity": 68,
+    "rating": 9.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638a39",
+    "popularity": 58,
+    "rating": 9.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638a3a",
+    "popularity": 68,
+    "rating": 8.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638a3b",
+    "popularity": 76,
+    "rating": 4.3
+  },
+  {
+    "film_id": "6a06f00176b111093d638a3c",
+    "popularity": 72,
+    "rating": 9.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638a3d",
+    "popularity": 56,
+    "rating": 10
+  },
+  {
+    "film_id": "6a06f00176b111093d638a3e",
+    "popularity": 65,
+    "rating": 3.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638a3f",
+    "popularity": 68,
+    "rating": 9.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638a40",
+    "popularity": 62,
+    "rating": 6.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638a41",
+    "popularity": 79,
+    "rating": 9
+  },
+  {
+    "film_id": "6a06f00176b111093d638a42",
+    "popularity": 41,
+    "rating": 6.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638a43",
+    "popularity": 35,
+    "rating": 5.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638a44",
+    "popularity": 25,
+    "rating": 3.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638a45",
+    "popularity": 37,
+    "rating": 6.6
+  },
+  {
+    "film_id": "6a06f00176b111093d638a46",
+    "popularity": 44,
+    "rating": 8.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638a47",
+    "popularity": 60,
+    "rating": 4.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638a48",
+    "popularity": 56,
+    "rating": 5.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638a49",
+    "popularity": 64,
+    "rating": 6.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638a4a",
+    "popularity": 42,
+    "rating": 6.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638a4b",
+    "popularity": 56,
+    "rating": 9.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638a4c",
+    "popularity": 41,
+    "rating": 9.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638a4d",
+    "popularity": 58,
+    "rating": 4.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638a4e",
+    "popularity": 70,
+    "rating": 5.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638a4f",
+    "popularity": 37,
+    "rating": 8.3
+  },
+  {
+    "film_id": "6a06f00176b111093d638a50",
+    "popularity": 79,
+    "rating": 6.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638a51",
+    "popularity": 57,
+    "rating": 10
+  },
+  {
+    "film_id": "6a06f00176b111093d638a52",
+    "popularity": 79,
+    "rating": 6.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638a53",
+    "popularity": 46,
+    "rating": 9.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638a54",
+    "popularity": 70,
+    "rating": 3.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638a55",
+    "popularity": 53,
+    "rating": 8.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638a56",
+    "popularity": 55,
+    "rating": 7.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638a57",
+    "popularity": 32,
+    "rating": 4.3
+  },
+  {
+    "film_id": "6a06f00176b111093d638a58",
+    "popularity": 64,
+    "rating": 3.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638a59",
+    "popularity": 44,
+    "rating": 8.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638a5a",
+    "popularity": 69,
+    "rating": 8.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638a5b",
+    "popularity": 57,
+    "rating": 8.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638a5c",
+    "popularity": 41,
+    "rating": 8.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638a5d",
+    "popularity": 58,
+    "rating": 9.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638a5e",
+    "popularity": 69,
+    "rating": 3.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638a5f",
+    "popularity": 37,
+    "rating": 7.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638a60",
+    "popularity": 63,
+    "rating": 7.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638a61",
+    "popularity": 26,
+    "rating": 8.3
+  },
+  {
+    "film_id": "6a06f00176b111093d638a62",
+    "popularity": 79,
+    "rating": 3.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638a63",
+    "popularity": 53,
+    "rating": 3.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638a64",
+    "popularity": 24,
+    "rating": 9.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638a65",
+    "popularity": 29,
+    "rating": 6.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638a66",
+    "popularity": 46,
+    "rating": 6.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638a67",
+    "popularity": 56,
+    "rating": 6.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638a68",
+    "popularity": 68,
+    "rating": 5.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638a69",
+    "popularity": 59,
+    "rating": 7.6
+  },
+  {
+    "film_id": "6a06f00176b111093d638a6a",
+    "popularity": 79,
+    "rating": 9.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638a6b",
+    "popularity": 74,
+    "rating": 3.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638a6c",
+    "popularity": 65,
+    "rating": 7.6
+  },
+  {
+    "film_id": "6a06f00176b111093d638a6d",
+    "popularity": 32,
+    "rating": 5.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638a6e",
+    "popularity": 36,
+    "rating": 8.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638a6f",
+    "popularity": 37,
+    "rating": 8.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638a70",
+    "popularity": 66,
+    "rating": 9.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638a71",
+    "popularity": 31,
+    "rating": 8.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638a72",
+    "popularity": 31,
+    "rating": 8.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638a73",
+    "popularity": 53,
+    "rating": 8.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638a74",
+    "popularity": 27,
+    "rating": 5.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638a75",
+    "popularity": 33,
+    "rating": 4.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638a76",
+    "popularity": 41,
+    "rating": 3.6
+  },
+  {
+    "film_id": "6a06f00176b111093d638a77",
+    "popularity": 69,
+    "rating": 8.3
+  },
+  {
+    "film_id": "6a06f00176b111093d638a78",
+    "popularity": 76,
+    "rating": 8.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638a79",
+    "popularity": 63,
+    "rating": 4.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638a7a",
+    "popularity": 60,
+    "rating": 8.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638a7b",
+    "popularity": 48,
+    "rating": 5.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638a7c",
+    "popularity": 28,
+    "rating": 9
+  },
+  {
+    "film_id": "6a06f00176b111093d638a7d",
+    "popularity": 28,
+    "rating": 8.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638a7e",
+    "popularity": 76,
+    "rating": 7.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638a7f",
+    "popularity": 21,
+    "rating": 9.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638a80",
+    "popularity": 31,
+    "rating": 6.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638a81",
+    "popularity": 74,
+    "rating": 8.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638a82",
+    "popularity": 50,
+    "rating": 3.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638a83",
+    "popularity": 68,
+    "rating": 4.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638a84",
+    "popularity": 36,
+    "rating": 5.3
+  },
+  {
+    "film_id": "6a06f00176b111093d638a85",
+    "popularity": 66,
+    "rating": 4.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638a86",
+    "popularity": 71,
+    "rating": 3.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638a87",
+    "popularity": 29,
+    "rating": 6.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638a88",
+    "popularity": 26,
+    "rating": 8.6
+  },
+  {
+    "film_id": "6a06f00176b111093d638a89",
+    "popularity": 55,
+    "rating": 7
+  },
+  {
+    "film_id": "6a06f00176b111093d638a8a",
+    "popularity": 29,
+    "rating": 4.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638a8b",
+    "popularity": 27,
+    "rating": 8.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638a8c",
+    "popularity": 48,
+    "rating": 3.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638a8d",
+    "popularity": 57,
+    "rating": 7.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638a8e",
+    "popularity": 77,
+    "rating": 5.6
+  },
+  {
+    "film_id": "6a06f00176b111093d638a8f",
+    "popularity": 36,
+    "rating": 8.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638a90",
+    "popularity": 38,
+    "rating": 4
+  },
+  {
+    "film_id": "6a06f00176b111093d638a91",
+    "popularity": 39,
+    "rating": 5.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638a92",
+    "popularity": 75,
+    "rating": 7.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638a93",
+    "popularity": 28,
+    "rating": 4
+  },
+  {
+    "film_id": "6a06f00176b111093d638a94",
+    "popularity": 72,
+    "rating": 3.3
+  },
+  {
+    "film_id": "6a06f00176b111093d638a95",
+    "popularity": 53,
+    "rating": 5.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638a96",
+    "popularity": 38,
+    "rating": 3.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638a97",
+    "popularity": 44,
+    "rating": 5.6
+  },
+  {
+    "film_id": "6a06f00176b111093d638a98",
+    "popularity": 39,
+    "rating": 7.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638a99",
+    "popularity": 28,
+    "rating": 9.3
+  },
+  {
+    "film_id": "6a06f00176b111093d638a9a",
+    "popularity": 77,
+    "rating": 8.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638a9b",
+    "popularity": 42,
+    "rating": 9.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638a9c",
+    "popularity": 30,
+    "rating": 7
+  },
+  {
+    "film_id": "6a06f00176b111093d638a9d",
+    "popularity": 56,
+    "rating": 9
+  },
+  {
+    "film_id": "6a06f00176b111093d638a9e",
+    "popularity": 49,
+    "rating": 9.6
+  },
+  {
+    "film_id": "6a06f00176b111093d638a9f",
+    "popularity": 23,
+    "rating": 9
+  },
+  {
+    "film_id": "6a06f00176b111093d638aa0",
+    "popularity": 42,
+    "rating": 5
+  },
+  {
+    "film_id": "6a06f00176b111093d638aa1",
+    "popularity": 27,
+    "rating": 7.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638aa2",
+    "popularity": 72,
+    "rating": 7.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638aa3",
+    "popularity": 48,
+    "rating": 6.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638aa4",
+    "popularity": 29,
+    "rating": 8.3
+  },
+  {
+    "film_id": "6a06f00176b111093d638aa5",
+    "popularity": 33,
+    "rating": 7.3
+  },
+  {
+    "film_id": "6a06f00176b111093d638aa6",
+    "popularity": 75,
+    "rating": 8.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638aa7",
+    "popularity": 48,
+    "rating": 9.3
+  },
+  {
+    "film_id": "6a06f00176b111093d638aa8",
+    "popularity": 40,
+    "rating": 8.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638aa9",
+    "popularity": 32,
+    "rating": 6.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638aaa",
+    "popularity": 48,
+    "rating": 6
+  },
+  {
+    "film_id": "6a06f00176b111093d638aab",
+    "popularity": 29,
+    "rating": 4.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638aac",
+    "popularity": 40,
+    "rating": 4.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638aad",
+    "popularity": 60,
+    "rating": 9.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638aae",
+    "popularity": 38,
+    "rating": 9.6
+  },
+  {
+    "film_id": "6a06f00176b111093d638aaf",
+    "popularity": 36,
+    "rating": 7.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638ab0",
+    "popularity": 56,
+    "rating": 6.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638ab1",
+    "popularity": 34,
+    "rating": 3.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638ab2",
+    "popularity": 59,
+    "rating": 4.6
+  },
+  {
+    "film_id": "6a06f00176b111093d638ab3",
+    "popularity": 38,
+    "rating": 9.6
+  },
+  {
+    "film_id": "6a06f00176b111093d638ab4",
+    "popularity": 39,
+    "rating": 9.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638ab5",
+    "popularity": 34,
+    "rating": 7.6
+  },
+  {
+    "film_id": "6a06f00176b111093d638ab6",
+    "popularity": 22,
+    "rating": 8.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638ab7",
+    "popularity": 24,
+    "rating": 6.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638ab8",
+    "popularity": 72,
+    "rating": 9.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638ab9",
+    "popularity": 58,
+    "rating": 4.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638aba",
+    "popularity": 59,
+    "rating": 4
+  },
+  {
+    "film_id": "6a06f00176b111093d638abb",
+    "popularity": 24,
+    "rating": 8.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638abc",
+    "popularity": 61,
+    "rating": 4.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638abd",
+    "popularity": 43,
+    "rating": 6.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638abe",
+    "popularity": 29,
+    "rating": 5.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638abf",
+    "popularity": 60,
+    "rating": 8
+  },
+  {
+    "film_id": "6a06f00176b111093d638ac0",
+    "popularity": 47,
+    "rating": 4.3
+  },
+  {
+    "film_id": "6a06f00176b111093d638ac1",
+    "popularity": 63,
+    "rating": 8.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638ac2",
+    "popularity": 24,
+    "rating": 5.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638ac3",
+    "popularity": 34,
+    "rating": 4.3
+  },
+  {
+    "film_id": "6a06f00176b111093d638ac4",
+    "popularity": 54,
+    "rating": 3.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638ac5",
+    "popularity": 47,
+    "rating": 6.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638ac6",
+    "popularity": 32,
+    "rating": 4.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638ac7",
+    "popularity": 30,
+    "rating": 5.6
+  },
+  {
+    "film_id": "6a06f00176b111093d638ac8",
+    "popularity": 67,
+    "rating": 5
+  },
+  {
+    "film_id": "6a06f00176b111093d638ac9",
+    "popularity": 36,
+    "rating": 8.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638aca",
+    "popularity": 73,
+    "rating": 9.3
+  },
+  {
+    "film_id": "6a06f00176b111093d638acb",
+    "popularity": 32,
+    "rating": 8.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638acc",
+    "popularity": 77,
+    "rating": 8.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638acd",
+    "popularity": 56,
+    "rating": 5.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638ace",
+    "popularity": 66,
+    "rating": 5.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638acf",
+    "popularity": 25,
+    "rating": 9.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638ad0",
+    "popularity": 69,
+    "rating": 6.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638ad1",
+    "popularity": 28,
+    "rating": 10
+  },
+  {
+    "film_id": "6a06f00176b111093d638ad2",
+    "popularity": 63,
+    "rating": 6.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638ad3",
+    "popularity": 50,
+    "rating": 8.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638ad4",
+    "popularity": 53,
+    "rating": 9.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638ad5",
+    "popularity": 20,
+    "rating": 9.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638ad6",
+    "popularity": 28,
+    "rating": 5.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638ad7",
+    "popularity": 47,
+    "rating": 9.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638ad8",
+    "popularity": 22,
+    "rating": 9.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638ad9",
+    "popularity": 77,
+    "rating": 4.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638ada",
+    "popularity": 35,
+    "rating": 9.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638adb",
+    "popularity": 27,
+    "rating": 7.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638adc",
+    "popularity": 38,
+    "rating": 8.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638add",
+    "popularity": 69,
+    "rating": 7.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638ade",
+    "popularity": 54,
+    "rating": 9.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638adf",
+    "popularity": 31,
+    "rating": 4.3
+  },
+  {
+    "film_id": "6a06f00176b111093d638ae0",
+    "popularity": 62,
+    "rating": 5.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638ae1",
+    "popularity": 34,
+    "rating": 9.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638ae2",
+    "popularity": 77,
+    "rating": 10
+  },
+  {
+    "film_id": "6a06f00176b111093d638ae3",
+    "popularity": 33,
+    "rating": 6.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638ae4",
+    "popularity": 65,
+    "rating": 9
+  },
+  {
+    "film_id": "6a06f00176b111093d638ae5",
+    "popularity": 52,
+    "rating": 4.3
+  },
+  {
+    "film_id": "6a06f00176b111093d638ae6",
+    "popularity": 36,
+    "rating": 3.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638ae7",
+    "popularity": 54,
+    "rating": 4.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638ae8",
+    "popularity": 56,
+    "rating": 9.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638ae9",
+    "popularity": 60,
+    "rating": 7
+  },
+  {
+    "film_id": "6a06f00176b111093d638aea",
+    "popularity": 58,
+    "rating": 3.3
+  },
+  {
+    "film_id": "6a06f00176b111093d638aeb",
+    "popularity": 22,
+    "rating": 6.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638aec",
+    "popularity": 76,
+    "rating": 3
+  },
+  {
+    "film_id": "6a06f00176b111093d638aed",
+    "popularity": 44,
+    "rating": 3.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638aee",
+    "popularity": 56,
+    "rating": 4.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638aef",
+    "popularity": 39,
+    "rating": 9.6
+  },
+  {
+    "film_id": "6a06f00176b111093d638af0",
+    "popularity": 20,
+    "rating": 5.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638af1",
+    "popularity": 55,
+    "rating": 4.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638af2",
+    "popularity": 77,
+    "rating": 4.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638af3",
+    "popularity": 66,
+    "rating": 8.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638af4",
+    "popularity": 32,
+    "rating": 6.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638af5",
+    "popularity": 52,
+    "rating": 9.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638af6",
+    "popularity": 80,
+    "rating": 6.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638af7",
+    "popularity": 61,
+    "rating": 3.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638af8",
+    "popularity": 71,
+    "rating": 8.3
+  },
+  {
+    "film_id": "6a06f00176b111093d638af9",
+    "popularity": 26,
+    "rating": 9.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638afa",
+    "popularity": 31,
+    "rating": 6.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638afb",
+    "popularity": 66,
+    "rating": 5.3
+  },
+  {
+    "film_id": "6a06f00176b111093d638afc",
+    "popularity": 38,
+    "rating": 8.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638afd",
+    "popularity": 78,
+    "rating": 5.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638afe",
+    "popularity": 66,
+    "rating": 5.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638aff",
+    "popularity": 22,
+    "rating": 7.6
+  },
+  {
+    "film_id": "6a06f00176b111093d638b00",
+    "popularity": 57,
+    "rating": 8.6
+  },
+  {
+    "film_id": "6a06f00176b111093d638b01",
+    "popularity": 78,
+    "rating": 8.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638b02",
+    "popularity": 25,
+    "rating": 3.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638b03",
+    "popularity": 31,
+    "rating": 9.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638b04",
+    "popularity": 53,
+    "rating": 9.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638b05",
+    "popularity": 48,
+    "rating": 8.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638b06",
+    "popularity": 57,
+    "rating": 8.6
+  },
+  {
+    "film_id": "6a06f00176b111093d638b07",
+    "popularity": 58,
+    "rating": 9.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638b08",
+    "popularity": 47,
+    "rating": 9.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638b09",
+    "popularity": 64,
+    "rating": 9.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638b0a",
+    "popularity": 65,
+    "rating": 6.6
+  },
+  {
+    "film_id": "6a06f00176b111093d638b0b",
+    "popularity": 36,
+    "rating": 6.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638b0c",
+    "popularity": 36,
+    "rating": 10
+  },
+  {
+    "film_id": "6a06f00176b111093d638b0d",
+    "popularity": 27,
+    "rating": 8.3
+  },
+  {
+    "film_id": "6a06f00176b111093d638b0e",
+    "popularity": 57,
+    "rating": 9.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638b0f",
+    "popularity": 57,
+    "rating": 9.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638b10",
+    "popularity": 23,
+    "rating": 6.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638b11",
+    "popularity": 44,
+    "rating": 9.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638b12",
+    "popularity": 23,
+    "rating": 9.6
+  },
+  {
+    "film_id": "6a06f00176b111093d638b13",
+    "popularity": 77,
+    "rating": 3.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638b14",
+    "popularity": 45,
+    "rating": 4.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638b15",
+    "popularity": 55,
+    "rating": 8.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638b16",
+    "popularity": 34,
+    "rating": 6.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638b17",
+    "popularity": 30,
+    "rating": 5.3
+  },
+  {
+    "film_id": "6a06f00176b111093d638b18",
+    "popularity": 33,
+    "rating": 3.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638b19",
+    "popularity": 49,
+    "rating": 5.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638b1a",
+    "popularity": 68,
+    "rating": 7.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638b1b",
+    "popularity": 41,
+    "rating": 4.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638b1c",
+    "popularity": 67,
+    "rating": 9.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638b1d",
+    "popularity": 38,
+    "rating": 9.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638b1e",
+    "popularity": 42,
+    "rating": 4.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638b1f",
+    "popularity": 67,
+    "rating": 6.6
+  },
+  {
+    "film_id": "6a06f00176b111093d638b20",
+    "popularity": 72,
+    "rating": 9.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638b21",
+    "popularity": 50,
+    "rating": 3.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638b22",
+    "popularity": 74,
+    "rating": 7.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638b23",
+    "popularity": 70,
+    "rating": 9.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638b24",
+    "popularity": 77,
+    "rating": 10
+  },
+  {
+    "film_id": "6a06f00176b111093d638b25",
+    "popularity": 27,
+    "rating": 9.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638b26",
+    "popularity": 21,
+    "rating": 4
+  },
+  {
+    "film_id": "6a06f00176b111093d638b27",
+    "popularity": 37,
+    "rating": 7.6
+  },
+  {
+    "film_id": "6a06f00176b111093d638b28",
+    "popularity": 73,
+    "rating": 9.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638b29",
+    "popularity": 62,
+    "rating": 6.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638b2a",
+    "popularity": 35,
+    "rating": 7.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638b2b",
+    "popularity": 61,
+    "rating": 7.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638b2c",
+    "popularity": 45,
+    "rating": 3.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638b2d",
+    "popularity": 41,
+    "rating": 9.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638b2e",
+    "popularity": 25,
+    "rating": 7.3
+  },
+  {
+    "film_id": "6a06f00176b111093d638b2f",
+    "popularity": 30,
+    "rating": 5.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638b30",
+    "popularity": 48,
+    "rating": 7
+  },
+  {
+    "film_id": "6a06f00176b111093d638b31",
+    "popularity": 26,
+    "rating": 9.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638b32",
+    "popularity": 28,
+    "rating": 5.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638b33",
+    "popularity": 36,
+    "rating": 3
+  },
+  {
+    "film_id": "6a06f00176b111093d638b34",
+    "popularity": 32,
+    "rating": 9.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638b35",
+    "popularity": 35,
+    "rating": 8.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638b36",
+    "popularity": 25,
+    "rating": 9.6
+  },
+  {
+    "film_id": "6a06f00176b111093d638b37",
+    "popularity": 79,
+    "rating": 7.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638b38",
+    "popularity": 45,
+    "rating": 6.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638b39",
+    "popularity": 20,
+    "rating": 6.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638b3a",
+    "popularity": 75,
+    "rating": 4.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638b3b",
+    "popularity": 24,
+    "rating": 8.6
+  },
+  {
+    "film_id": "6a06f00176b111093d638b3c",
+    "popularity": 65,
+    "rating": 7.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638b3d",
+    "popularity": 71,
+    "rating": 8.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638b3e",
+    "popularity": 80,
+    "rating": 8.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638b3f",
+    "popularity": 65,
+    "rating": 4
+  },
+  {
+    "film_id": "6a06f00176b111093d638b40",
+    "popularity": 40,
+    "rating": 5
+  },
+  {
+    "film_id": "6a06f00176b111093d638b41",
+    "popularity": 51,
+    "rating": 3.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638b42",
+    "popularity": 60,
+    "rating": 9.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638b43",
+    "popularity": 70,
+    "rating": 3.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638b44",
+    "popularity": 52,
+    "rating": 8.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638b45",
+    "popularity": 55,
+    "rating": 5
+  },
+  {
+    "film_id": "6a06f00176b111093d638b46",
+    "popularity": 79,
+    "rating": 7.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638b47",
+    "popularity": 33,
+    "rating": 7.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638b48",
+    "popularity": 42,
+    "rating": 7.3
+  },
+  {
+    "film_id": "6a06f00176b111093d638b49",
+    "popularity": 31,
+    "rating": 3.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638b4a",
+    "popularity": 20,
+    "rating": 3.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638b4b",
+    "popularity": 47,
+    "rating": 6.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638b4c",
+    "popularity": 78,
+    "rating": 8.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638b4d",
+    "popularity": 59,
+    "rating": 6.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638b4e",
+    "popularity": 60,
+    "rating": 8.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638b4f",
+    "popularity": 23,
+    "rating": 3.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638b50",
+    "popularity": 75,
+    "rating": 5.3
+  },
+  {
+    "film_id": "6a06f00176b111093d638b51",
+    "popularity": 47,
+    "rating": 5.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638b52",
+    "popularity": 41,
+    "rating": 5.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638b53",
+    "popularity": 50,
+    "rating": 3.3
+  },
+  {
+    "film_id": "6a06f00176b111093d638b54",
+    "popularity": 68,
+    "rating": 6.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638b55",
+    "popularity": 74,
+    "rating": 4.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638b56",
+    "popularity": 34,
+    "rating": 9.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638b57",
+    "popularity": 68,
+    "rating": 6.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638b58",
+    "popularity": 27,
+    "rating": 7.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638b59",
+    "popularity": 74,
+    "rating": 8.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638b5a",
+    "popularity": 61,
+    "rating": 4.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638b5b",
+    "popularity": 46,
+    "rating": 6.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638b5c",
+    "popularity": 35,
+    "rating": 7.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638b5d",
+    "popularity": 76,
+    "rating": 4.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638b5e",
+    "popularity": 40,
+    "rating": 4.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638b5f",
+    "popularity": 65,
+    "rating": 3.3
+  },
+  {
+    "film_id": "6a06f00176b111093d638b60",
+    "popularity": 35,
+    "rating": 6.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638b61",
+    "popularity": 54,
+    "rating": 5.6
+  },
+  {
+    "film_id": "6a06f00176b111093d638b62",
+    "popularity": 52,
+    "rating": 9.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638b63",
+    "popularity": 64,
+    "rating": 9.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638b64",
+    "popularity": 78,
+    "rating": 10
+  },
+  {
+    "film_id": "6a06f00176b111093d638b65",
+    "popularity": 66,
+    "rating": 4.6
+  },
+  {
+    "film_id": "6a06f00176b111093d638b66",
+    "popularity": 56,
+    "rating": 8.3
+  },
+  {
+    "film_id": "6a06f00176b111093d638b67",
+    "popularity": 23,
+    "rating": 10
+  },
+  {
+    "film_id": "6a06f00176b111093d638b68",
+    "popularity": 57,
+    "rating": 9.3
+  },
+  {
+    "film_id": "6a06f00176b111093d638b69",
+    "popularity": 65,
+    "rating": 8.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638b6a",
+    "popularity": 61,
+    "rating": 7.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638b6b",
+    "popularity": 42,
+    "rating": 5.6
+  },
+  {
+    "film_id": "6a06f00176b111093d638b6c",
+    "popularity": 32,
+    "rating": 4.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638b6d",
+    "popularity": 79,
+    "rating": 9.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638b6e",
+    "popularity": 72,
+    "rating": 9.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638b6f",
+    "popularity": 37,
+    "rating": 6.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638b70",
+    "popularity": 40,
+    "rating": 8.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638b71",
+    "popularity": 32,
+    "rating": 8.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638b72",
+    "popularity": 38,
+    "rating": 4.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638b73",
+    "popularity": 65,
+    "rating": 5.3
+  },
+  {
+    "film_id": "6a06f00176b111093d638b74",
+    "popularity": 37,
+    "rating": 8.6
+  },
+  {
+    "film_id": "6a06f00176b111093d638b75",
+    "popularity": 71,
+    "rating": 4.3
+  },
+  {
+    "film_id": "6a06f00176b111093d638b76",
+    "popularity": 43,
+    "rating": 8.6
+  },
+  {
+    "film_id": "6a06f00176b111093d638b77",
+    "popularity": 31,
+    "rating": 10
+  },
+  {
+    "film_id": "6a06f00176b111093d638b78",
+    "popularity": 63,
+    "rating": 9.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638b79",
+    "popularity": 43,
+    "rating": 8.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638b7a",
+    "popularity": 44,
+    "rating": 4.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638b7b",
+    "popularity": 53,
+    "rating": 7.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638b7c",
+    "popularity": 67,
+    "rating": 9
+  },
+  {
+    "film_id": "6a06f00176b111093d638b7d",
+    "popularity": 23,
+    "rating": 9.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638b7e",
+    "popularity": 24,
+    "rating": 9.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638b7f",
+    "popularity": 80,
+    "rating": 4.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638b80",
+    "popularity": 32,
+    "rating": 5.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638b81",
+    "popularity": 29,
+    "rating": 7.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638b82",
+    "popularity": 53,
+    "rating": 3.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638b83",
+    "popularity": 24,
+    "rating": 7
+  },
+  {
+    "film_id": "6a06f00176b111093d638b84",
+    "popularity": 55,
+    "rating": 9.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638b85",
+    "popularity": 37,
+    "rating": 7.6
+  },
+  {
+    "film_id": "6a06f00176b111093d638b86",
+    "popularity": 27,
+    "rating": 7.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638b87",
+    "popularity": 20,
+    "rating": 6.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638b88",
+    "popularity": 68,
+    "rating": 8.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638b89",
+    "popularity": 29,
+    "rating": 9.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638b8a",
+    "popularity": 64,
+    "rating": 8.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638b8b",
+    "popularity": 65,
+    "rating": 8.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638b8c",
+    "popularity": 74,
+    "rating": 7.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638b8d",
+    "popularity": 52,
+    "rating": 3.7
+  },
+  {
+    "film_id": "6a06f00176b111093d638b8e",
+    "popularity": 53,
+    "rating": 7.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638b8f",
+    "popularity": 64,
+    "rating": 5.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638b90",
+    "popularity": 48,
+    "rating": 3.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638b91",
+    "popularity": 50,
+    "rating": 6.1
+  },
+  {
+    "film_id": "6a06f00176b111093d638b92",
+    "popularity": 80,
+    "rating": 9.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638b93",
+    "popularity": 64,
+    "rating": 4
+  },
+  {
+    "film_id": "6a06f00176b111093d638b94",
+    "popularity": 66,
+    "rating": 7.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638b95",
+    "popularity": 58,
+    "rating": 4.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638b96",
+    "popularity": 40,
+    "rating": 6.4
+  },
+  {
+    "film_id": "6a06f00176b111093d638b97",
+    "popularity": 68,
+    "rating": 9.9
+  },
+  {
+    "film_id": "6a06f00176b111093d638b98",
+    "popularity": 30,
+    "rating": 7
+  },
+  {
+    "film_id": "6a06f00176b111093d638b99",
+    "popularity": 37,
+    "rating": 6.3
+  },
+  {
+    "film_id": "6a06f00176b111093d638b9a",
+    "popularity": 58,
+    "rating": 6.5
+  },
+  {
+    "film_id": "6a06f00176b111093d638b9b",
+    "popularity": 42,
+    "rating": 9.8
+  },
+  {
+    "film_id": "6a06f00176b111093d638b9c",
+    "popularity": 62,
+    "rating": 6.2
+  },
+  {
+    "film_id": "6a06f00176b111093d638b9d",
+    "popularity": 69,
+    "rating": 9.8
+  }
+]

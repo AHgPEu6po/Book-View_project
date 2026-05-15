@@ -58,6 +58,32 @@ const ListFilms = ({ token }) => {
     currentPage * itemsPerPage
   );
 
+  const getPaginationRange = (currentPage, totalPages, delta = 2) => {
+    const range = [];
+    const left = Math.max(2, currentPage - delta);
+    const right = Math.min(totalPages - 1, currentPage + delta);
+
+    range.push(1);
+
+    if (left > 2) {
+      range.push("...");
+    }
+
+    for (let i = left; i <= right; i++) {
+      range.push(i);
+    }
+
+    if (right < totalPages - 1) {
+      range.push("...");
+    }
+
+    if (totalPages > 1) {
+      range.push(totalPages);
+    }
+
+    return range;
+  };
+
   return (
     <div className="w-full">
 
@@ -140,18 +166,24 @@ const ListFilms = ({ token }) => {
           Prev
         </button>
 
-        {Array.from({ length: totalPages }, (_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrentPage(i + 1)}
-            className={`px-3 py-1 rounded ${
-              currentPage === i + 1
-                ? "bg-gray-500 text-white"
-                : "bg-gray-200"
-            }`}
-          >
-            {i + 1}
-          </button>
+        {getPaginationRange(currentPage, totalPages).map((page, idx) => (
+          page === "..." ? (
+            <span key={idx} className="px-2">
+              ...
+            </span>
+          ) : (
+            <button
+              key={idx}
+              onClick={() => setCurrentPage(page)}
+              className={`px-3 py-1 rounded ${
+                currentPage === page
+                  ? "bg-gray-500 text-white"
+                  : "bg-gray-200"
+              }`}
+            >
+              {page}
+            </button>
+          )
         ))}
 
         <button
