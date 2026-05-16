@@ -116,15 +116,46 @@ const allGenres = [
 const rand = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
 
-const generateGenres = () => {
-  const favCount = rand(0, 10);
-  const exclCount = rand(0, 10);
-  const shuffled = [...allGenres].sort(() => 0.5 - Math.random());
-  const favoriteGenres = shuffled.slice(0, favCount);
-  const remaining = shuffled.filter(
-    (g) => !favoriteGenres.includes(g)
+const USER_CLUSTERS = [
+  {
+    name: "action",
+    genres: ["Бойовик", "Екшн", "Трилер", "Пригоди", "Шпигунський"]
+  },
+  {
+    name: "drama",
+    genres: ["Драма", "Мелодрама", "Романтика", "Філософський"]
+  },
+  {
+    name: "horror",
+    genres: ["Жахи", "Містика", "Трилер", "Паранормальний"]
+  },
+  {
+    name: "anime",
+    genres: ["Аніме", "Фентезі", "Ісекай", "Пригоди"]
+  },
+  {
+    name: "comedy",
+    genres: ["Комедія", "Чорна комедія", "Сатира", "Романтична комедія"]
+  }
+];
+
+const assignCluster = () => {
+  return USER_CLUSTERS[rand(0, USER_CLUSTERS.length - 1)];
+};
+
+const generateGenres = (cluster) => {
+  const favCount = rand(3, 7);
+
+  const shuffled = [...cluster.genres].sort(
+    () => 0.5 - Math.random()
   );
-  const excludedGenres = remaining.slice(0, exclCount);
+
+  const favoriteGenres = shuffled.slice(0, favCount);
+
+  const excludedGenres = allGenres
+    .filter(g => !favoriteGenres.includes(g))
+    .slice(0, rand(0, 5));
+
   return { favoriteGenres, excludedGenres };
 };
 
@@ -157,17 +188,20 @@ const generateRatingCoverage = () => {
 
 const generateUserSeed = async (count = 200) => {
 
+  await userModel.deleteMany();
+
   const users = [];
 
   for (let i = 1; i <= count; i++) {
 
     const fullProfile = Math.random() > 0.25;
+    const cluster = assignCluster();
 
     const password = "12345678";
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
-    const { favoriteGenres, excludedGenres } = generateGenres();
+    const { favoriteGenres, excludedGenres } = generateGenres(cluster);
     const { city, district } = generateLocation(fullProfile);
     const birthYear = generateBirthYear(fullProfile);
 

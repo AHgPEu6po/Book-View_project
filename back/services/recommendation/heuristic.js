@@ -1,21 +1,56 @@
-const heuristicScore = ({ user, film, cinema }) => {
+import {
+  recommendationLog,
+} from "../../utils/recommendationLogger.js";
+
+const heuristicScore = ({
+  user,
+  film,
+  cinema
+}) => {
+
+  recommendationLog(
+    "\nЕвристичний аналіз"
+  );
 
   let score = 0;
 
   if (film.isPremiere) {
-    score += 3;
+
+    recommendationLog(
+      "Прем'єра: +10"
+    );
+
+    score += 10;
   }
 
   for (const genre of film.category || []) {
-    if (user.favoriteGenres?.includes(genre)) 
-    {
-      score += 2;
+
+    if (
+      user.favoriteGenres?.includes(
+        genre
+      )
+    ) {
+
+      recommendationLog(
+        `Улюблений жанр ${genre}: +5`
+      );
+
+      score += 5;
     }
   }
 
   for (const genre of film.category || []) {
-    if (user.excludedGenres?.includes(genre)) 
-    {
+
+    if (
+      user.excludedGenres?.includes(
+        genre
+      )
+    ) {
+
+      recommendationLog(
+        `Виключений жанр ${genre}: -100`
+      );
+
       score -= 100;
     }
   }
@@ -25,8 +60,17 @@ const heuristicScore = ({ user, film, cinema }) => {
     cinema.district &&
     user.district === cinema.district
   ) {
-    score += 5;
+
+    recommendationLog(
+      "Співпадіння району: +2"
+    );
+
+    score += 2;
   }
+
+  recommendationLog(
+    `Підсумковий евристичний бал: ${score}`
+  );
 
   return score;
 };

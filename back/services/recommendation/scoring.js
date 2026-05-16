@@ -3,12 +3,12 @@ const finalScore = ({
   collaborativeScore,
   heuristicScore,
 }) => {
+  const result =
+    contentScore * 0.4 +
+    collaborativeScore * 0.6 +
+    heuristicScore * 0.1;
 
-  return (
-    contentScore * 0.5 +
-    collaborativeScore * 0.3 +
-    heuristicScore * 0.2
-  );
+  return result;
 };
 
 export { finalScore };
