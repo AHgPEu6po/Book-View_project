@@ -1,104 +1,64 @@
 import { cosineSimilarity } from "./similarity.js";
-
-import {
-  recommendationLog,
-} from "../../utils/recommendationLogger.js";
+import { recommendationLog } from "../../utils/recommendationLogger.js";
 
 const buildUserVector = (user) => {
+
   const vector = {};
+  let total = 0;
 
   for (const item of user.history || []) {
+
     if (!item.film_id?.category) continue;
 
-    const genres = item.film_id.category;
+    const weight = item.rating
+      ? item.rating / 5
+      : 1;
 
-    for (const genre of genres) {
-      vector[genre] = (vector[genre] || 0) + 1;
+    for (const genre of item.film_id.category) {
+      vector[genre] = (vector[genre] || 0) + weight;
+      total += weight;
     }
   }
 
   for (const genre of user.favoriteGenres || []) {
-    vector[genre] = ((vector[genre] || 0) + 1) * 3;
+    vector[genre] = (vector[genre] || 0) + 1;
+    total += 1;
   }
 
-  return vector;
-};
-
-const buildUserDistribution = (user) => {
-  const dist = {};
-  let total = 0;
-
-  for (const item of user.history || []) {
-    if (!item.film_id?.category) continue;
-
-    for (const g of item.film_id.category) {
-      dist[g] = (dist[g] || 0) + 1;
-      total++;
+  if (total > 0) {
+    for (const key in vector) {
+      vector[key] = vector[key] / total;
     }
   }
 
-  for (const g of user.favoriteGenres || []) {
-    dist[g] = ((dist[g] || 0) + 1) * 3;
-    total++;
-  }
-
-  for (const k in dist) {
-    dist[k] = dist[k] / total;
-  }
-
-  return dist;
-};
-
-const buildFilmVector = (film, userDist) => {
-  const vector = {};
-
-  for (const genre of film.category || []) {
-
-    const userFreq = userDist[genre] || 0;
-
-    const weight = 1 / (0.1 + userFreq);
-
-    vector[genre] = weight;
-  }
-
   return vector;
 };
 
-const contentBasedScore = (
-  user,
-  film
-) => {
+const buildFilmVector = (film) => {
+  const vector = {};
+  for (const genre of film.category || []) {
+    vector[genre] = 1;
+  }
+  return vector;
+};
 
-  recommendationLog(
-    "\nКонтент-орієнтований аналіз"
-  );
+const contentBasedScore = (user, film) => {
+
+  recommendationLog("\nКонтент-орієнтований аналіз");
 
   const userVector = buildUserVector(user);
-  const userDist = buildUserDistribution(user);
+  const filmVector = buildFilmVector(film);
 
-  const filmVector = buildFilmVector(film, userDist);
+  recommendationLog(`Вектор користувача: ${JSON.stringify(userVector)}`);
+  recommendationLog(`Вектор фільму: ${JSON.stringify(filmVector)}`);
 
-  recommendationLog(
-    `Вектор користувача: ${JSON.stringify(userVector)}`
-  );
+  const similarity = cosineSimilarity(userVector, filmVector);
 
-  recommendationLog(
-    `Вектор фільму: ${JSON.stringify(filmVector)}`
-  );
+  recommendationLog(`Косинусна схожість: ${similarity.toFixed(4)}`);
 
-  const similarity =
-    cosineSimilarity(
-      userVector,
-      filmVector
-    );
+  const scaled = Math.max(0, similarity) * 10;
 
-  recommendationLog(
-    `Косинусна схожість: ${similarity.toFixed(2)}`
-  );
-
-  const amplified = Math.pow(similarity, 0.25) * 10;
-
-  return amplified;
+  return scaled;
 };
 
 export { contentBasedScore };
