@@ -14,76 +14,6 @@ const AppContextProvider = (props) => {
     const [showLogin, setShowLogin] = useState(false);
     const [cartItems, setCartItems] = useState({});
 
-    const login = async (email, password) => {
-        try {
-
-            const response = await axios.post(
-                backendUrl + "/api/user/login",
-                {
-                    email,
-                    password,
-                }
-            );
-
-            if (response.data.success) {
-
-                setToken(response.data.token);
-
-                localStorage.setItem(
-                    "token",
-                    response.data.token
-                );
-
-                toast.success("Успішний вхід");
-                await getUserData(response.data.token);
-                await getUserCart(response.data.token);
-                setShowLogin(false);
-
-            } else {
-                toast.error(response.data.message);
-            }
-
-        } catch (error) {
-            console.log(error);
-            toast.error(error.message);
-        }
-    };
-
-    const register = async (name, email, password) => {
-        try {
-
-            const response = await axios.post(
-                backendUrl + "/api/user/register",
-                {
-                    name,
-                    email,
-                    password,
-                }
-            );
-
-            if (response.data.success) {
-
-                setToken(response.data.token);
-
-                localStorage.setItem(
-                    "token",
-                    response.data.token
-                );
-
-                toast.success("Акаунт створено");
-                await getUserData(response.data.token);
-                await getUserCart(response.data.token);
-                setShowLogin(false);
-
-            } else {
-                toast.error(response.data.message);
-            }
-
-        } catch (error) {
-            console.log(error);
-            toast.error(error.message);
-        }
-    };
 
     const logout = () => {
         localStorage.removeItem("token");
@@ -320,7 +250,7 @@ const AppContextProvider = (props) => {
 
     const value = {
         backendUrl, navigate, token, setToken, userData, setUserData,
-        showLogin, setShowLogin, login, register, logout, getUserData,
+        showLogin, setShowLogin, logout, getUserData,
         cartItems, setCartItems, addToCart, deleteFromCart, getUserCart,
         getCartAmount, customSelectStyles, formatDate
     };

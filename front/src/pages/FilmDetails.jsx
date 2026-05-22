@@ -171,14 +171,16 @@ const FilmDetails = () => {
           </div>
         </div>
 
-        <div className="md:w-2/4 flex justify-center items-center">
-          <iframe
-            src={getEmbedURL(film.trailerURL) + "?autoplay=1"}
-            title="Trailer"
-            className="w-full h-full rounded-xl"
-            allowFullScreen
-          />
-        </div>
+        {film.trailerURL && (
+          <div className="md:w-2/4 flex justify-center items-center">
+            <iframe
+              src={getEmbedURL(film.trailerURL) + "?autoplay=1"}
+              title="Trailer"
+              className="w-full h-full rounded-xl"
+              allowFullScreen
+            />
+          </div>
+        )}
 
       </div>
 

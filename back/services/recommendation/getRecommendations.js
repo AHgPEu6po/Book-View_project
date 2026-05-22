@@ -153,11 +153,10 @@ const getRecommendations = async (userId) => {
     recommendationLog("Запуск popularity model...\n");
 
     const recommendations =
-      await getPopularityRecommendations({
-        user,
-        films: filteredFilms,
+      await getFilmPopularityMap(
+        filteredFilms,
         users,
-      });
+      );
 
     recommendations.sort(
       (a, b) => b.score - a.score

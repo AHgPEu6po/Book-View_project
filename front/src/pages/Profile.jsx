@@ -5,7 +5,7 @@ import { AppContext } from "../context/AppContext";
 import { allGenres, cities, districts } from "../assets/assets";
 
 const Profile = () => {
-  const { backendUrl, token } = useContext(AppContext);
+  const { backendUrl, token, customSelectStyles } = useContext(AppContext);
 
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -123,51 +123,6 @@ const Profile = () => {
         ...prev,
         district: selected ? selected.value : "",
     }));
-  };
-
-  const customSelectStyles = {
-    control: (provided) => ({
-      ...provided,
-      borderColor: "#C4C7D2",
-      borderRadius: "15px",
-      boxShadow: "none",
-      minHeight: "48px",
-      "&:hover": {
-        borderColor: "#C4C7D2",
-      },
-    }),
-
-    multiValue: (provided) => ({
-      ...provided,
-      backgroundColor: "#E5E7EB",
-      borderRadius: "8px",
-    }),
-
-    multiValueRemove: (provided) => ({
-      ...provided,
-      borderRadius: "8px",
-      cursor: "pointer",
-      "&:hover": {
-        backgroundColor: "#E8A7AF",
-        color: "#111827",
-      },
-    }),
-
-    placeholder: (provided) => ({
-      ...provided,
-      color: "#6B7280",
-    }),
-
-    option: (provided, state) => ({
-      ...provided,
-      backgroundColor: state.isSelected
-        ? "#800020"
-        : state.isFocused
-        ? "#E8A7AF"
-        : "white",
-      color: state.isSelected ? "white" : "#111827",
-      cursor: "pointer",
-    }),
   };
 
   if (!token) {
