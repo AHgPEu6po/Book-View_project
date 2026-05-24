@@ -4,7 +4,7 @@ const finalScore = ({
   heuristicScore,
 }) => {
   const result =
-    contentScore * 0.4 +
+    contentScore * 0.3 +
     collaborativeScore * 0.6 +
     heuristicScore * 0.1;
 

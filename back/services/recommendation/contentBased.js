@@ -61,4 +61,4 @@ const contentBasedScore = (user, film) => {
   return scaled;
 };
 
-export { contentBasedScore };
+export { buildUserVector, buildFilmVector, contentBasedScore };

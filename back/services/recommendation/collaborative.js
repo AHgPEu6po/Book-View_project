@@ -72,4 +72,4 @@ const collaborativeScore = async ({ currentUser, users, film }) => {
   return Math.min(10, predictedRating);
 };
 
-export { collaborativeScore };
+export { collaborativeScore, buildRatingMap };
