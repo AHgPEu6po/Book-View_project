@@ -247,4 +247,11 @@ const generateUserSeed = async (count = 200) => {
   };
 };
 
-export default generateUserSeed;
+const removeUserSeed =
+  async () => {
+    await userModel.deleteMany({
+      email: { $regex: /@test\.com$/i }
+    });
+};
+
+export { generateUserSeed, removeUserSeed };

@@ -1,6 +1,6 @@
 import { generateCinemaSeed, removeCinemaSeed } from "../services/seed/cinemaSeed.js";
 import { generateFilmSeed, removeFilmSeed } from "../services/seed/filmSeed.js";
-import generateUserSeed from "../services/seed/userSeed.js";
+import { generateUserSeed, removeUserSeed } from "../services/seed/userSeed.js";
 import generateHistorySeed from "../services/seed/historySeed.js";
 import generateSessionSeed from "../services/seed/sessionSeed.js";
 
@@ -117,6 +117,28 @@ const seedUsers = async (req, res) => {
   }
 };
 
+const clearUsers = async (req, res) => {
+
+  try {
+
+    await removeUserSeed();
+
+    res.json({
+      success: true,
+      message: "Користувачів видалені",
+    });
+
+  } catch (error) {
+
+    console.log(error);
+
+    res.json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
 const seedHistory = async (req, res) => {
   try {
     const result = await generateHistorySeed();
@@ -143,4 +165,4 @@ const seedSessions = async (req, res) => {
   }
 };
 
-export { seedCinemas, clearCinemas, seedFilms, clearFilms, seedUsers, seedHistory, seedSessions };
+export { seedCinemas, clearCinemas, seedFilms, clearFilms, seedUsers, clearUsers, seedHistory, seedSessions };

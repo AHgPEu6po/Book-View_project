@@ -1,6 +1,6 @@
 import express from "express";
 
-import { seedCinemas, clearCinemas, seedFilms, clearFilms, seedUsers, seedHistory, seedSessions } from "../controllers/seedController.js";
+import { seedCinemas, clearCinemas, seedFilms, clearFilms, seedUsers, clearUsers, seedHistory, seedSessions } from "../controllers/seedController.js";
 
 const seedRoute = express.Router();
 
@@ -9,6 +9,7 @@ seedRoute.delete( "/cinemas", clearCinemas );
 seedRoute.post( "/films", seedFilms );
 seedRoute.delete( "/films", clearFilms );
 seedRoute.post( "/users", seedUsers );
+seedRoute.delete( "/users", clearUsers );
 seedRoute.post("/history", seedHistory);
 seedRoute.post("/sessions", seedSessions);
 

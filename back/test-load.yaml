@@ -1,0 +1,55 @@
+config:
+  target: "http://localhost:4000"
+
+  phases:
+    - duration: 60
+      arrivalRate: 5
+      name: "Warm up"
+
+    - duration: 60
+      arrivalRate: 15
+      name: "Normal load"
+
+    - duration: 60
+      arrivalRate: 30
+      name: "Peak load"
+
+  defaults:
+    headers:
+      Content-Type: "application/json"
+
+scenarios:
+  # =====================================================
+  # 1. FILM BROWSING
+  # =====================================================
+  - name: "Film browsing"
+    flow:
+
+      - get:
+          url: "/api/film/available"
+
+      - post:
+          url: "/api/film/single"
+          json:
+            filmId: "6a06f00176b111093d6389aa"
+
+
+  # =====================================================
+  # 2. USER PROFILE + RECOMMENDATIONS
+  # =====================================================
+  - name: "User profile + recommendations"
+    flow:
+      - get:
+          url: "/api/user/me"
+          headers:
+            Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMDgyOGVjMDVlYmI2NTVjYmQ2NzhhMSIsImlhdCI6MTc3OTYzMjc3M30.zaKY3gp6gsMn3-EuFZETUYU_ayR0J8mIebTUMEL-hUo"
+
+      - get:
+          url: "/api/user/history"
+          headers:
+            Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IjZhMDgyOGVjMDVlYmI2NTVjYmQ2NzhhMSIsImlhdCI6MTc3OTYzMjc3M30.zaKY3gp6gsMn3-EuFZETUYU_ayR0J8mIebTUMEL-hUo"
+
+      - get:
+          url: "/api/recommendation/personal"
+          headers:
+            Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IjZhMDgyOGVjMDVlYmI2NTVjYmQ2NzhhMSIsImlhdCI6MTc3OTYzMjc3M30.zaKY3gp6gsMn3-EuFZETUYU_ayR0J8mIebTUMEL-hUo"
